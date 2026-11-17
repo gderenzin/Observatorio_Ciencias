@@ -1,0 +1,51 @@
+name: Observatorio Científico - Actualización Diaria
+
+on:
+  schedule:
+    # 11:00 UTC = 06:00 America/Guayaquil (UTC-5, Ecuador sin horario de verano)
+    - cron: "0 11 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: observatorio-ciencia-diario
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias científicas
+        run: pip install -r requirements.txt
+
+      - name: Ingesta de fuentes científicas oficiales (fetch_science.py)
+        run: python scripts/fetch_science.py
+
+      - name: Compilación del portal estático (build_science_site.py)
+        run: python scripts/build_science_site.py
+
+      - name: Commitear novedades científicas (si las hay)
+        id: commit_repo
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add site/ data/publicadas_ciencias.json data/ledger_dedup.json data/nuevas_ciencias_hoy.json
+          if git diff --cached --quiet; then
+            echo "Sin novedades hoy: no hay cambios que commitear."
+          else
+            git commit -m "Compilación automática del observatorio científico - $(date -u +%Y-%m-%d)"
+            git push
+          fi

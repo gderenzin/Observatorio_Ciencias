@@ -1,0 +1,57 @@
+# ==============================================================================
+# OBSERVATORIO DE CIENCIAS DE LA TIERRA, TELEDETECCIÓN Y CLIMA ESPACIAL
+# LISTA BLANCA (ALLOWLIST) DE FUENTES CIENTÍFICAS PRIMARIAS Y REPOSITORIOS EO
+# ==============================================================================
+# Regla de Oro: Solo se admiten fuentes institucionales directas de agencias espaciales,
+# organismos meteorológicos mundiales y consorcios científicos. Prohibido blogs informales.
+#
+# Campos requeridos:
+#   nombre: Nombre oficial de la entidad
+#   url: URL del feed RSS/Atom
+#   dominio: Dominio canónico de los artículos para verificación de origen
+#   idioma: "en" o "es"
+#   categoria: Criterio taxonómico de indexación
+#   descripcion: Alcance técnico de la fuente
+
+fuentes:
+  - nombre: "ESA - Observación de la Tierra"
+    url: "https://www.esa.int/rssfeed/Our_Activities/Observing_the_Earth"
+    dominio: "esa.int"
+    idioma: en
+    categoria: "teledeteccion_satelital"
+    descripcion: "Misiones Sentinel de Copernicus, Earth Explorers y teledetección biofísica de la Agencia Espacial Europea."
+
+  - nombre: "NASA - Earth Observatory"
+    url: "https://earthobservatory.nasa.gov/feeds/earth-observatory.rss"
+    dominio: "earthobservatory.nasa.gov"
+    idioma: en
+    categoria: "dinamica_terrestre"
+    descripcion: "Registros globales de cobertura vegetal, sequías, inundaciones, aerosoles y balance radiativo planetario."
+
+  - nombre: "NOAA - Space Weather Prediction Center"
+    url: "https://www.swpc.noaa.gov/products/space-weather-rss-feed"
+    dominio: "swpc.noaa.gov"
+    idioma: en
+    categoria: "clima_espacial"
+    descripcion: "Telemetría operativa de tormentas geomagnéticas, actividad solar del Ciclo 25 y radiación ionosférica."
+
+  - nombre: "USGS - Landsat Program"
+    url: "https://www.usgs.gov/news/rss/landsat"
+    dominio: "usgs.gov"
+    idioma: en
+    categoria: "teledeteccion_satelital"
+    descripcion: "Novedades técnicas de calibración, reflectancia de superficie y productos satelitales Landsat 8 y 9."
+
+  - nombre: "Organización Meteorológica Mundial (OMM / WMO)"
+    url: "https://wmo.int/news/feed"
+    dominio: "wmo.int"
+    idioma: en
+    categoria: "climatologia_oceano"
+    descripcion: "Vigilancia climática global, eventos hidrológicos extremos y evolución de los fenómenos ENSO (El Niño / La Niña)."
+
+  - nombre: "Programa Copernicus de la Unión Europea"
+    url: "https://www.copernicus.eu/en/news_and_events/news/rss.xml"
+    dominio: "copernicus.eu"
+    idioma: en
+    categoria: "teledeteccion_satelital"
+    descripcion: "Informes de servicio operativo en tierra, atmósfera, océanos y gestión de emergencias satelitales."

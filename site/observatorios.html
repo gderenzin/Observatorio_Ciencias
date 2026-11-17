@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infraestructura Operativa de Observatorios | Observatorio de Ciencias</title>
+  <link rel="stylesheet" href="assets/css/science_editorial.css">
+</head>
+<body>
+  
+    <div class="top-institutional-bar">
+      <div class="container">
+        <div class="affiliation">
+          <span>🏛️ Instituto Tecnológico Superior EuroAmericano</span>
+          <span>•</span>
+          <span>🌐 Nodo UNESCO GlobalCoast (PS-006-08)</span>
+        </div>
+        <div class="live-links">
+          <a href="https://geo.euroamericano.edu.ec" target="_blank" rel="noopener">📡 Observatorio Litoral (GOES-19)</a>
+          <a href="https://espacial.euroamericano.edu.ec" target="_blank" rel="noopener">☀️ Clima Espacial Ecuatorial</a>
+        </div>
+      </div>
+    </div>
+    
+  
+    <header class="main-header">
+      <div class="container">
+        <div class="header-brand">
+          <div class="pre-title">Portal de Ciencia Abierta & Difusión Satelital</div>
+          <h1>Observatorio de Ciencias de la Tierra, Teledetección y Clima Espacial</h1>
+          <p class="sub-desc">
+            Plataforma académica y experimental dedicada a la telemetría satelital (GOES-19 GLM/ABI, Sentinel-2, Landsat),
+            geofísica del litoral ecuatoriano, monitoreo agro-hidrológico y heliofísica en el Pacífico ecuatorial.
+          </p>
+        </div>
+        <nav class="editorial-nav">
+          <a href="index.html" >Inicio</a>
+          <a href="#despachos-nodo" >Despachos Técnicos (Preprints)</a>
+          <a href="observatorios.html" class="active">Observatorios en Producción</a>
+          <a href="archivo.html" >Archivo Histórico</a>
+        </nav>
+      </div>
+    </header>
+    
+
+  <main class="content-area">
+    <div class="container" style="max-width: 960px;">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Infraestructura y Servidores en Producción</h2>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 28px; margin-bottom: 30px;">
+        <h3 style="font-family: var(--font-serif); font-size: 20px; color: #0f172a; margin-bottom: 8px;">1. Observatorio Meteorológico del Litoral (geo.euroamericano.edu.ec)</h3>
+        <p style="text-align: justify; line-height: 1.7; color: #334155; margin-bottom: 14px;">
+          Plataforma de vigilancia sinóptica marina y atmosférica alojada en servidor Debian 13 institucional (puerto 8000, Nginx con terminación SSL Let's Encrypt). 
+          Integra telemetría directa de destellos convectivos del sensor GLM de GOES-19, temperatura de brillo Planck en la banda infrarroja limpia ABI Banda 13 (10.3 μm), 
+          y nivel del mar en tiempo real de los mareógrafos de La Libertad y Esmeraldas bajo la red UNESCO/IOC Sea Level Station Monitoring Facility.
+        </p>
+        <pre class="ascii-diagram">
++--------------------+        +---------------------+        +----------------------+
+| NOAA GOES-19 GLM   | -----> | Ingestor Python     | -----> | Servidor Debian 13   |
+| (Destellos/Rayos)  |        | netCDF4 / GDAL      |        | Nginx :8000 (HTTPS)  |
++--------------------+        +---------------------+        +----------------------+
+          |                                                             |
++--------------------+                                                  v
+| UNESCO/IOC Mar     | -------------------------------------> [ geo.euroamericano ]
++--------------------+
+        </pre>
+        <p><a href="https://geo.euroamericano.edu.ec" target="_blank" style="color: #0369a1; font-weight: 600;">Abrir Observatorio Litoral (geo.euroamericano.edu.ec) →</a></p>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 28px; margin-bottom: 30px;">
+        <h3 style="font-family: var(--font-serif); font-size: 20px; color: #0f172a; margin-bottom: 8px;">2. Observatorio de Clima Espacial Académico (espacial.euroamericano.edu.ec)</h3>
+        <p style="text-align: justify; line-height: 1.7; color: #334155; margin-bottom: 14px;">
+          Módulo de monitoreo heliofísico e ionosférico (puerto 8001, servicio systemd `espacial.service`). 
+          Monitorea los flujos de rayos X en tiempo real del sensor XRS (satélites GOES-16 y GOES-18), las alertas operativas del Space Weather Prediction Center (NOAA SWPC), 
+          y el índice planetario Kp para anticipar perturbaciones en enlaces de telecomunicaciones en alta frecuencia (HF) y errores de multicamino/centelleo en receptores GNSS/RTK agrícolas y marítimos.
+        </p>
+        <pre class="ascii-diagram">
++--------------------+        +---------------------+        +----------------------+
+| NOAA SWPC JSON/XML | -----> | Ingestor Espacial   | -----> | Servicio Systemd     |
+| (Rayos X / Kp / CME)|       | Python 3 / FastAPI  |        | Nginx :8001 (HTTPS)  |
++--------------------+        +---------------------+        +----------------------+
+                                                                        |
+                                                                        v
+                                                             [ espacial.euroamericano ]
+        </pre>
+        <p><a href="https://espacial.euroamericano.edu.ec" target="_blank" style="color: #0369a1; font-weight: 600;">Abrir Observatorio Clima Espacial (espacial.euroamericano.edu.ec) →</a></p>
+      </div>
+    </div>
+  </main>
+
+  
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>Observatorio Científico</h4>
+            <p>
+              Iniciativa de ciencia abierta orientada a la investigación en teledetección multiespectral,
+              sistemas de alerta temprana de tormentas y radiación ionosférica para la cuenca baja del Guayas y el litoral.
+            </p>
+            <p><strong>Investigador Responsable:</strong><br>Prof. Ing. Feddor Gabriel Derenzin Martínez</p>
+          </div>
+          <div class="footer-col">
+            <h4>Infraestructura Operativa</h4>
+            <ul>
+              <li><a href="https://geo.euroamericano.edu.ec" target="_blank">geo.euroamericano.edu.ec (GOES-19 / Mareógrafos)</a></li>
+              <li><a href="https://espacial.euroamericano.edu.ec" target="_blank">espacial.euroamericano.edu.ec (Clima Espacial / SWPC)</a></li>
+              <li><a href="https://zenodo.org" target="_blank">Zenodo Open Science Repository</a></li>
+              <li><a href="https://github.com/gderenzin" target="_blank">Repositorio en GitHub</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Adscripción & Vínculo Internacional</h4>
+            <p>
+              • Instituto Tecnológico Superior EuroAmericano<br>
+              • Carrera de Redes y Telecomunicaciones<br>
+              • Nodo Analítico UNESCO GlobalCoast PS-006-08<br>
+              • Colaboración Doctoral NMBU (Noruega)
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>© 2026 Observatorio de Ciencias de la Tierra y el Espacio. Licencia Creative Commons Atribución 4.0 Internacional (CC BY 4.0).</div>
+          <div>Cero publicidad • Código Abierto • rigor epistemológico garantizado</div>
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
