@@ -2,10 +2,6 @@
 # ARTÍCULOS Y ESTUDIOS EXTERNOS APROBADOS PARA PUBLICACIÓN
 # PROTOCOLO PETERS & CHIN-YEE (2025) DE CONTENCIÓN EPISTÉMICA
 # ==============================================================================
-# REGLA DE ORO: Ningún artículo externo se publica automáticamente.
-# Todo artículo listado aquí ha sido validado manualmente por F. Derenzin,
-# verificando que el resumen delimite estrictamente su zona, período y sensores.
-# ==============================================================================
 
 articulos:
   - id: "LIT-2026-001"
@@ -13,20 +9,23 @@ articulos:
     titulo: "Estimación de la Humedad Superficial del Suelo mediante Retrodispersión Radar Sentinel-1 C-SAR en Suelos Agrícolas Semiáridos"
     titulo_en: "Surface Soil Moisture Retrieval Using Sentinel-1 C-SAR Backscatter Over Semiarid Agricultural Soils"
     autores: "Martínez-García, J., Dubois, C., & Al-Husseini, M."
-    revista_fuente: "Copernicus EGU - Hydrology and Earth System Sciences"
+    revista_fuente: "Copernicus EGU - Hydrology & Earth System Sciences"
     doi: "10.5194/hess-28-4125-2025"
     doi_url: "https://doi.org/10.5194/hess-28-4125-2025"
     fecha_publicacion: "2025-10-14"
     es_preprint: false
     estado_revision_pares: "Revisado por pares (Peer-Reviewed)"
     categoria: "Teledetección Radar SAR"
+    categoria_slug: "cat-hidrologia"
+    imagen: "/imagenes/sentinel1_radar_soil.svg"
+    imagen_pie: "Sentinel-1 C-SAR · Retrodispersión VV/VH y Humedad de Suelo"
     
     # PROTOCOLO PETERS & CHIN-YEE (2025) - DELIMITACIÓN ESTRICTA DEL ALCANCE
     alcance_y_limitaciones:
-      zona_estudio: "Cuenca experimental del Guadalentín, Murcia, España (área total muestreada: 48,5 km²). No generalizable a suelos arcillosos tropicales sin recalibración dieléctrica."
+      zona_estudio: "Cuenca experimental del Guadalentín, Murcia, España (48,5 km²). No generalizable a suelos arcillosos tropicales sin recalibración dieléctrica."
       periodo_temporal: "Campaña agrícola de secano entre octubre de 2023 y mayo de 2024 (8 meses)."
-      sensores_y_muestra: "36 escenas radar Sentinel-1A (modo IW, polarizaciones VV/VH, ángulo de incidencia 39,2°) calibradas con 14 sondas capacitivas TDR a 5 cm de profundidad."
-      tipo_conclusion: "Correlación estadística lineal ($R^2 = 0.74$, $RMSE = 0.042\\text{ m}^3/\\text{m}^3$) válida exclusivamente para rugosidad superficial $s < 1.5\\text{ cm}$ y biomasa vegetal seca $< 1.2\\text{ kg/m}^2$. El modelo pierde sensibilidad con rugosidades mayores o lluvias recientes."
+      sensores_y_muestra: "36 escenas radar Sentinel-1A (modo IW, polarizaciones VV/VH) calibradas con 14 sondas capacitivas TDR a 5 cm de profundidad."
+      tipo_conclusion: "Correlación estadística lineal (R² = 0.74, RMSE = 0.042 m³/m³) válida exclusivamente para rugosidad s < 1.5 cm y biomasa vegetal seca < 1.2 kg/m²."
     
     resumen_fiel: "El estudio evalúa un algoritmo de inversión de retrodispersión radar en banda C para cuantificar la humedad superficial en los primeros 5 cm de suelo franco-arenoso. Los autores constatan que la polarización cruzada VH/VV atenúa parcialmente la interferencia de la rugosidad en parcelas labradas, permitiendo estimar el contenido de agua mientras el dosel vegetal sea ralo. Los autores advierten explícitamente que el método satura cuando la biomasa supera 1.2 kg/m² y que las estimaciones no pueden extrapolarse a horizontes profundos del suelo ni a texturas con alto contenido de arcilla expansiva."
     

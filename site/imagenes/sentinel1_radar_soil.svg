@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a192f"/>
+      <stop offset="50%" stop-color="#0f3438"/>
+      <stop offset="100%" stop-color="#041214"/>
+    </linearGradient>
+    <pattern id="grid5" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#134e4a" stroke-width="0.6" opacity="0.4"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#bgGrad5)"/>
+  <rect width="800" height="450" fill="url(#grid5)"/>
+
+  <!-- Haz Radar SAR Microondas -->
+  <polygon points="620,80 500,340 740,340" fill="#0d9488" fill-opacity="0.15" stroke="#14b8a6" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <circle cx="620" cy="80" r="10" fill="#2dd4bf"/>
+  
+  <!-- Terreno Rugoso & Retrodispersión -->
+  <path d="M 460 340 Q 510 320 560 340 T 660 330 T 760 340" fill="none" stroke="#14b8a6" stroke-width="3"/>
+  <path d="M 530 330 L 550 260" stroke="#f59e0b" stroke-width="2" stroke-dasharray="2 2"/>
+  <path d="M 620 335 L 610 240" stroke="#f59e0b" stroke-width="2" stroke-dasharray="2 2"/>
+  <path d="M 680 332 L 660 270" stroke="#f59e0b" stroke-width="2" stroke-dasharray="2 2"/>
+
+  <!-- Telemetría & Textos Técnicos -->
+  <rect x="40" y="40" width="250" height="32" rx="4" fill="#0f172a" stroke="#0d9488" stroke-width="1"/>
+  <text x="55" y="61" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2dd4bf" letter-spacing="1">RADAR SAR: SENTINEL-1 C-SAR</text>
+  
+  <text x="40" y="115" font-family="'Inter', sans-serif" font-size="24" font-weight="800" fill="#f8fafc">Humedad de Suelo por Radar</text>
+  <text x="40" y="145" font-family="'Inter', sans-serif" font-size="15" font-weight="500" fill="#94a3b8">HESS Copernicus EGU • DOI: 10.5194/hess-28-4125-2025</text>
+  
+  <!-- Cajas de Métricas Radar -->
+  <rect x="40" y="180" width="180" height="60" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="55" y="202" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#64748b">POLARIZACIÓN</text>
+  <text x="55" y="228" font-family="'Inter', sans-serif" font-size="20" font-weight="800" fill="#2dd4bf">VV / VH (IW)</text>
+  
+  <rect x="240" y="180" width="180" height="60" rx="4" fill="#0f172a" stroke="#0d9488" stroke-width="1"/>
+  <text x="255" y="202" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#2dd4bf">CONDICIÓN DE BORDE</text>
+  <text x="255" y="228" font-family="'Inter', sans-serif" font-size="16" font-weight="800" fill="#f59e0b">RUGOSIDAD &lt; 1.5 cm</text>
+
+  <!-- Pie técnico -->
+  <text x="40" y="415" font-family="'Fira Code', monospace" font-size="11" fill="#64748b">LITERATURA CIENTÍFICA VALIDADA • PETERS & CHIN-YEE (2025)</text>
+  <text x="680" y="415" font-family="'Fira Code', monospace" font-size="11" fill="#38bdf8">CIENCIAS DERENZIN</text>
+</svg>
