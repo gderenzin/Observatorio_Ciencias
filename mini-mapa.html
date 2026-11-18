@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Mapa Radar Litoral — Observatorio</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body, #map { width: 100%; height: 100%; background: #070d1e; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; cursor: pointer; }
+    
+    /* Top live badge */
+    .telemetry-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      z-index: 1000;
+      background: rgba(3, 7, 18, 0.88);
+      border: 1px solid #1e293b;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      pointer-events: none;
+    }
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 6px #22c55e;
+      animation: blinkDot 1.5s infinite;
+    }
+    .badge-text {
+      font-size: 10px;
+      font-weight: 700;
+      color: #38bdf8;
+      letter-spacing: 0.5px;
+      font-family: monospace;
+    }
+    @keyframes blinkDot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* Bottom open link */
+    .open-badge {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      z-index: 1000;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid #0284c7;
+      color: #38bdf8;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      pointer-events: none;
+      font-family: monospace;
+    }
+
+    /* Pulsing marker */
+    .station-marker {
+      position: relative;
+      width: 12px;
+      height: 12px;
+    }
+    .station-dot {
+      width: 8px;
+      height: 8px;
+      background: #38bdf8;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      border: 1px solid #ffffff;
+    }
+    .station-pulse {
+      width: 16px;
+      height: 16px;
+      border: 1.5px solid #38bdf8;
+      border-radius: 50%;
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      animation: pulseRing 2s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+    }
+    .station-dot.guayas {
+      background: #f59e0b;
+      border-color: #fef08a;
+    }
+    .station-pulse.guayas {
+      border-color: #f59e0b;
+    }
+    @keyframes pulseRing {
+      0% { transform: scale(0.6); opacity: 1; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="telemetry-badge">
+    <span class="live-dot"></span>
+    <span class="badge-text">RADAR & MAREÓGRAFOS · INTERACTIVO</span>
+  </div>
+  <div class="open-badge">Explorar geo.euroamericano.edu.ec ↗</div>
+  <div id="map" title="Haga clic para abrir la consola completa en geo.euroamericano.edu.ec"></div>
+
+  <script>
+    // Iniciar Leaflet centrado en el litoral ecuatoriano
+    const map = L.map('map', {
+      center: [-1.85, -80.3],
+      zoom: 6,
+      zoomControl: false,
+      attributionControl: false,
+      scrollWheelZoom: false,
+      doubleClickZoom: false
+    });
+
+    // Capa base oscura satelital/cartográfica de alto contraste
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      maxZoom: 10,
+      minZoom: 5,
+      subdomains: 'abcd'
+    }).addTo(map);
+
+    // Anillos concéntricos de radar de cobertura costera (Centro: Golfo de Guayaquil / Sta. Elena)
+    L.circle([-2.23, -80.91], {
+      radius: 40000,
+      color: '#38bdf8',
+      weight: 1,
+      dashArray: '3, 4',
+      fillColor: '#38bdf8',
+      fillOpacity: 0.08
+    }).addTo(map);
+
+    L.circle([-2.23, -80.91], {
+      radius: 80000,
+      color: '#38bdf8',
+      weight: 0.8,
+      dashArray: '3, 4',
+      fill: false
+    }).addTo(map);
+
+    L.circle([-2.23, -80.91], {
+      radius: 130000,
+      color: '#38bdf8',
+      weight: 0.6,
+      dashArray: '3, 4',
+      fill: false
+    }).addTo(map);
+
+    // Estaciones Mareográficas y de Monitoreo
+    const estaciones = [
+      { nombre: 'Esmeraldas', lat: 0.98, lon: -79.66, tipo: 'normal' },
+      { nombre: 'Manta', lat: -0.95, lon: -80.73, tipo: 'normal' },
+      { nombre: 'La Libertad', lat: -2.23, lon: -80.91, tipo: 'normal' },
+      { nombre: 'Guayaquil', lat: -2.20, lon: -79.89, tipo: 'guayas' },
+      { nombre: 'Pto. Bolívar', lat: -3.26, lon: -80.00, tipo: 'normal' },
+      { nombre: 'Galápagos', lat: -0.74, lon: -90.31, tipo: 'normal' }
+    ];
+
+    estaciones.forEach(est => {
+      const icon = L.divIcon({
+        className: 'custom-icon',
+        html: `<div class="station-marker">
+                 <div class="station-pulse ${est.tipo}"></div>
+                 <div class="station-dot ${est.tipo}"></div>
+               </div>`,
+        iconSize: [12, 12],
+        iconAnchor: [6, 6]
+      });
+      L.marker([est.lat, est.lon], { icon: icon }).addTo(map);
+    });
+
+    // Al hacer clic en cualquier parte, abre la consola completa del observatorio
+    document.getElementById('map').addEventListener('click', () => {
+      window.open('https://geo.euroamericano.edu.ec', '_blank');
+    });
+  </script>
+</body>
+</html>
