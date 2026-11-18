@@ -38,7 +38,7 @@
 
   <main class="contenido portada con-sidebar-grid">
     <h1 class="sr-only">Observatorio de Ciencias de la Tierra, Teledetección y Clima Espacial — DERENZIN S.A.S.</h1>
-    <p class="subtitulo-pagina">Edición del 18 de noviembre de 2026 • Nodo Analítico UNESCO GlobalCoast PS-006-08 • Protocolo Peters & Chin-Yee (2025)</p>
+    <p class="subtitulo-pagina">Edición del 18 de noviembre de 2026 • Despachos Técnicos de Telemetría Satelital, Clima Espacial y Oceanografía Operativa</p>
     
     <div class="layout-grid-sidebar">
       <div class="contenido-principal">
@@ -184,57 +184,61 @@
       
       <aside class="sidebar-noticia">
         <div class="sidebar-noticia-sticky">
-          <!-- Widget 1: Telemetría en Vivo -->
-          <section class="sidebar-bloque">
-            <h2 class="sidebar-titulo">Observatorios en Vivo</h2>
-            <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
-              <div style="background: #ffffff; border: 1px solid var(--borde); border-radius: var(--radio); padding: 14px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                  <strong style="font-size: 13px; color: var(--texto);">Observatorio Litoral</strong>
-                  <span style="font-size: 10px; font-weight: 700; color: #15803d; background: #dcfce7; padding: 2px 6px; border-radius: 3px;">● EN VIVO</span>
-                </div>
-                <p style="font-size: 12px; color: var(--texto-tenue); margin: 0 0 8px 0; line-height: 1.45;">
-                  Sensor GOES-19 GLM de rayos cada 20s, canales ABI infrarrojos y mareógrafos UNESCO/IOC.
-                </p>
-                <a href="https://geo.euroamericano.edu.ec" target="_blank" style="font-size: 12px; font-weight: 600; color: var(--marca-acento-oscuro); text-decoration: none;">Acceder a geo.euroamericano.edu.ec →</a>
-              </div>
-
-              <div style="background: #ffffff; border: 1px solid var(--borde); border-radius: var(--radio); padding: 14px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                  <strong style="font-size: 13px; color: var(--texto);">Clima Espacial</strong>
-                  <span style="font-size: 10px; font-weight: 700; color: #d97706; background: #fef3c7; padding: 2px 6px; border-radius: 3px;">● CICLO 25</span>
-                </div>
-                <p style="font-size: 12px; color: var(--texto-tenue); margin: 0 0 8px 0; line-height: 1.45;">
-                  Flujos de rayos X solares GOES, índice Kp, perturbación RTK y centelleo en Ecuador.
-                </p>
-                <a href="https://espacial.euroamericano.edu.ec" target="_blank" style="font-size: 12px; font-weight: 600; color: var(--marca-acento-oscuro); text-decoration: none;">Acceder a espacial.euroamericano.edu.ec →</a>
-              </div>
+          <!-- Widget 1: Observatorio Litoral (geo.euroamericano.edu.ec) -->
+          <section class="sidebar-bloque" style="padding: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <h2 class="sidebar-titulo" style="margin: 0; color: var(--texto);">Observatorio Litoral</h2>
+              <span style="font-size: 10px; font-weight: 700; color: #15803d; background: #dcfce7; padding: 2px 6px; border-radius: 3px;">● EN VIVO</span>
             </div>
+            <a href="https://geo.euroamericano.edu.ec" target="_blank" rel="noopener" style="display: block; overflow: hidden; border-radius: var(--radio-chico); border: 1px solid var(--borde); margin-bottom: 10px; background: #070d1e;">
+              <img src="/imagenes/mapa_litoral_miniatura.svg" alt="Mapa Litoral GOES-19 y Mareógrafos" style="width: 100%; height: auto; display: block; aspect-ratio: 5/3; object-fit: cover;">
+            </a>
+            <p style="font-size: 12px; color: var(--texto-tenue); margin: 0 0 10px 0; line-height: 1.45;">
+              Sensor <strong>GOES-19 GLM</strong> de rayos cada 20s, canales ABI infrarrojos y red mareográfica <strong>UNESCO/IOC</strong> en tiempo real.
+            </p>
+            <a href="https://geo.euroamericano.edu.ec" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 8px 12px; background: #0f172a; color: #38bdf8; font-size: 11px; font-weight: 700; border-radius: var(--radio-chico); text-decoration: none; border: 1px solid #1e293b; box-sizing: border-box;">
+              Acceder a geo.euroamericano.edu.ec ↗
+            </a>
           </section>
 
-          <!-- Widget 2: Integridad Epistémica -->
+          <!-- Widget 2: Clima Espacial (espacial.euroamericano.edu.ec) -->
+          <section class="sidebar-bloque" style="padding: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <h2 class="sidebar-titulo" style="margin: 0; color: var(--texto);">Clima Espacial</h2>
+              <span style="font-size: 10px; font-weight: 700; color: #d97706; background: #fef3c7; padding: 2px 6px; border-radius: 3px;">● CICLO 25</span>
+            </div>
+            <a href="https://espacial.euroamericano.edu.ec" target="_blank" rel="noopener" style="display: block; position: relative; overflow: hidden; border-radius: var(--radio-chico); border: 1px solid var(--borde); margin-bottom: 10px; background: #000;">
+              <video autoplay loop muted playsinline poster="/imagenes/suvi_flare_131.png" style="width: 100%; height: 160px; object-fit: cover; display: block;">
+                <source src="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_0131.mp4" type="video/mp4">
+                <source src="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_0304.mp4" type="video/mp4">
+                <source src="/assets/video/solar_flare_loop.mp4" type="video/mp4">
+              </video>
+              <div style="position: absolute; bottom: 6px; left: 6px; background: rgba(3, 7, 18, 0.85); border: 1px solid rgba(255,255,255,0.15); border-radius: 3px; padding: 2px 6px; display: flex; align-items: center; gap: 4px;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #eab308; display: inline-block;"></span>
+                <span style="font-size: 9px; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #fde047; letter-spacing: 0.5px;">LLAMARADA EUV 13.1 nm</span>
+              </div>
+            </a>
+            <p style="font-size: 12px; color: var(--texto-tenue); margin: 0 0 10px 0; line-height: 1.45;">
+              Fulguraciones solares de rayos X (clases M/X), coronógrafo <strong>CCOR-1</strong>, índice Kp y perturbaciones en redes <strong>GNSS/RTK</strong>.
+            </p>
+            <a href="https://espacial.euroamericano.edu.ec" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 8px 12px; background: #0f172a; color: #facc15; font-size: 11px; font-weight: 700; border-radius: var(--radio-chico); text-decoration: none; border: 1px solid #1e293b; box-sizing: border-box;">
+              Acceder a espacial.euroamericano.edu.ec ↗
+            </a>
+          </section>
+
+          <!-- Widget 3: Integridad Epistémica -->
           <section class="sidebar-bloque">
-            <h2 class="sidebar-titulo">Protocolo Peters & Chin-Yee (2025)</h2>
+            <h2 class="sidebar-titulo">Protocolo Peters &amp; Chin-Yee (2025)</h2>
             <p style="font-size: 12px; color: var(--texto-tenue); line-height: 1.5; margin: 8px 0;">
               <em>Royal Society Open Science</em> (DOI: 10.1098/rsos.241776).
-              Los modelos de lenguaje tienden a multiplicar por 5 la probabilidad de exagerar conclusiones científicas.
+              Los modelos de lenguaje multiplican por 5 la probabilidad de exagerar conclusiones científicas.
             </p>
             <div style="background: #f8f9fa; border: 1px solid var(--borde); border-radius: var(--radio-chico); padding: 10px; font-size: 11px; line-height: 1.45; color: var(--texto);">
               ✓ Cero publicación automática.<br>
               ✓ Delimitación espacial y temporal.<br>
               ✓ Preprints rotulados sin par.<br>
-              ✓ Revisión por F. Derenzin.
+              ✓ Revisión humana por F. Derenzin.
             </div>
-          </section>
-
-          <!-- Widget 3: Afiliación Científica -->
-          <section class="sidebar-bloque">
-            <h2 class="sidebar-titulo">Adscripción y Doctorado</h2>
-            <p style="font-size: 12px; color: var(--texto-tenue); line-height: 1.5; margin: 8px 0;">
-              • <strong>Nodo UNESCO GlobalCoast:</strong> Código internacional PS-006-08.<br>
-              • <strong>Proyecto Doctoral NMBU:</strong> Dept. of Geomatics, Norwegian University of Life Sciences.<br>
-              • <strong>EuroAmericano:</strong> Dirección de Investigación y Redes.
-            </p>
           </section>
         </div>
       </aside>
