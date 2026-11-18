@@ -128,7 +128,7 @@
   <!-- Encabezado y Badges de Telemetría -->
   <rect x="220" y="10" width="170" height="20" rx="3" fill="#030712" fill-opacity="0.85" stroke="#1e293b" stroke-width="0.6"/>
   <circle cx="230" cy="20" r="3" fill="#22c55e"/>
-  <text x="238" y="24" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#4ade80">RADAR & MAREÓGRAFOS</text>
+  <text x="238" y="24" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#4ade80">RADAR &amp; MAREÓGRAFOS</text>
 
   <!-- Pie de Control Satelital -->
   <rect x="0" y="218" width="400" height="22" fill="#030712" fill-opacity="0.9"/>
