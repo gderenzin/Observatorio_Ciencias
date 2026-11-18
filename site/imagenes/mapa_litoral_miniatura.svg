@@ -90,7 +90,7 @@
   <circle cx="196" cy="162" r="3" fill="#eab308" class="flash-anim"/>
   <circle cx="178" cy="132" r="2.5" fill="#facc15" class="flash-anim"/>
 
-  <!-- Mareógrafos UNESCO / INOCAR (Puntos de Monitoreo de Pleamar y Nivel del Mar) -->
+  <!-- Estaciones Mareográficas Públicas (Puntos de Monitoreo de Pleamar y Nivel del Mar) -->
   <!-- 1. Esmeraldas -->
   <circle cx="185" cy="45" r="3.5" fill="#10b981"/>
   <circle cx="185" cy="45" r="3.5" fill="none" stroke="#10b981" stroke-width="1" class="ring-anim"/>
