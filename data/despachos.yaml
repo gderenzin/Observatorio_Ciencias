@@ -2,8 +2,11 @@
 # DESPACHOS DE INVESTIGACIÓN TÉCNICA Y PREPRINTS DEL OBSERVATORIO
 # NODO ECUATORIANO DE OBSERVACIÓN DE LA TIERRA Y CLIMA ESPACIAL
 # ==============================================================================
-# Autor Principal: Ing. Feddor Gabriel Derenzin Martínez
+# Autor Principal: Prof. Ing. Feddor Gabriel Derenzin Martínez
 # Filiación: Instituto Tecnológico Superior EuroAmericano | Nodo UNESCO GlobalCoast (PS-006-08)
+# Regla de Oro (Peters & Chin-Yee / Regla 14): Cero DOIs simulados.
+# Mientras el autor no emita el release en Zenodo, el estado es "En proceso de radicación".
+# ==============================================================================
 
 despachos:
   - id: "DISP-2026-001"
@@ -11,14 +14,15 @@ despachos:
     titulo: "Diagnóstico Biofísico y Monitoreo de Estrés Hídrico en Maíz Duro (Zea mays L.) mediante Teledetección Multiespectral Sentinel-2 L2A en la Cuenca de Montalvo"
     titulo_en: "Biophysical Diagnosis and Water Stress Monitoring in Hard Corn (Zea mays L.) Using Sentinel-2 L2A Multispectral Remote Sensing in the Montalvo Basin"
     fecha: "2026-11-15"
-    autor: "Ing. Feddor Gabriel Derenzin Martínez"
+    autor: "Prof. Ing. Feddor Gabriel Derenzin Martínez"
     filiacion: "Director de la Carrera de Redes y Telecomunicaciones, Instituto Tecnológico Superior EuroAmericano. Nodo Analítico UNESCO GlobalCoast PS-006-08."
     contacto: "fderenzin@euroamericano.edu.ec"
     categoria: "Teledetección Agrícola"
     categoria_slug: "cat-teledeteccion"
     imagen: "/imagenes/sentinel2_montalvo.svg"
     imagen_pie: "Sentinel-2 L2A · Cuenca de Montalvo (22,42 ha)"
-    doi: "10.5281/zenodo.14208001"
+    doi: null
+    estado_doi: "En proceso de radicación (Zenodo CERN)"
     zenodo_url: "https://zenodo.org"
     resumen: "Se presenta la metodología de evaluación espectral para una parcela de 22,42 ha en Montalvo (Los Ríos) a partir de imágenes Sentinel-2 L2A. Se demuestra la asincronía entre el índice NDVI (que satura en 0.825 debido a la densidad foliar) y el índice NDMI (que desciende a 0.284 por pérdida de agua en el mesófilo foliar durante la fase de floración R1), estableciendo un protocolo de alerta temprana para riego tecnificado."
     palabras_clave:
@@ -35,14 +39,15 @@ despachos:
     titulo: "Fenomenología de la Saturación del Dosel Vegetal: Evaluación Comparativa de Índices NDVI y NDRE en Cultivos Arroceros de Cuenca Baja (San Román, Babahoyo)"
     titulo_en: "Vegetation Canopy Saturation Phenomenology: Comparative Assessment of NDVI and NDRE Indices in Lowland Rice Crops (San Román, Babahoyo)"
     fecha: "2026-11-13"
-    autor: "Ing. Feddor Gabriel Derenzin Martínez"
+    autor: "Prof. Ing. Feddor Gabriel Derenzin Martínez"
     filiacion: "Director de la Carrera de Redes y Telecomunicaciones, Instituto Tecnológico Superior EuroAmericano. Nodo Analítico UNESCO GlobalCoast PS-006-08."
     contacto: "fderenzin@euroamericano.edu.ec"
     categoria: "Teledetección Agrícola"
     categoria_slug: "cat-teledeteccion"
     imagen: "/imagenes/sentinel2c_babahoyo.svg"
     imagen_pie: "Sentinel-2C L2A · Cuadrícula 805 px San Román, Babahoyo"
-    doi: "10.5281/zenodo.14208002"
+    doi: null
+    estado_doi: "En proceso de radicación (Zenodo CERN)"
     zenodo_url: "https://zenodo.org"
     resumen: "Investigación experimental sobre una cuadrícula de 805 píxeles de Sentinel-2C L2A en San Román, Babahoyo, contrastando el comportamiento del índice NDVI frente al índice de borde rojo NDRE. Los resultados demuestran que durante el máximo amacollamiento y llenado de grano, el NDVI pierde sensibilidad espectral (saturando por encima de 0.83), mientras que la banda B05 (RedEdge 705 nm) del NDRE mantiene una correlación lineal con el contenido total de clorofila foliar."
     palabras_clave:
@@ -58,14 +63,15 @@ despachos:
     titulo: "Arquitectura Computacional de Ingesta Continua y Telemetría de Tormentas Eléctricas en el Golfo de Guayaquil mediante el Sensor GLM de GOES-19"
     titulo_en: "Computational Architecture for Continuous Ingestion and Lightning Telemetry in the Gulf of Guayaquil via GOES-19 GLM Sensor"
     fecha: "2026-11-11"
-    autor: "Ing. Feddor Gabriel Derenzin Martínez"
+    autor: "Prof. Ing. Feddor Gabriel Derenzin Martínez"
     filiacion: "Director de la Carrera de Redes y Telecomunicaciones, Instituto Tecnológico Superior EuroAmericano. Nodo Analítico UNESCO GlobalCoast PS-006-08."
     contacto: "fderenzin@euroamericano.edu.ec"
     categoria: "Meteorología Satelital"
     categoria_slug: "cat-meteorologia"
     imagen: "/imagenes/goes19_glm_guayas.svg"
     imagen_pie: "Sensor GOES-19 GLM · Telemetría en Tiempo Real de Rayos"
-    doi: "10.5281/zenodo.14208003"
+    doi: null
+    estado_doi: "En proceso de radicación (Zenodo CERN)"
     zenodo_url: "https://zenodo.org"
     resumen: "Documentación del pipeline de procesamiento en tiempo real desplegado en geo.euroamericano.edu.ec. El sistema ingesta datos crudos netCDF del Geostationary Lightning Mapper (GLM) del satélite NOAA GOES-19, extrayendo coordenadas geodésicas de destellos y energía radiativa cada 20 segundos para la cuenca del Río Guayas y el perfil costero, correlacionándolos con la temperatura de brillo del canal infrarrojo ABI Banda 13."
     palabras_clave:
@@ -81,14 +87,15 @@ despachos:
     titulo: "Caracterización del Clima Espacial Ecuatorial y Riesgo de Degradación en Posicionamiento GNSS/RTK en la Costa Ecuatoriana durante el Máximo Solar 25"
     titulo_en: "Equatorial Space Weather Characterization and Risk of GNSS/RTK Positioning Degradation on the Ecuadorian Coast during Solar Maximum 25"
     fecha: "2026-11-10"
-    autor: "Ing. Feddor Gabriel Derenzin Martínez"
+    autor: "Prof. Ing. Feddor Gabriel Derenzin Martínez"
     filiacion: "Director de la Carrera de Redes y Telecomunicaciones, Instituto Tecnológico Superior EuroAmericano. Nodo Analítico UNESCO GlobalCoast PS-006-08."
     contacto: "fderenzin@euroamericano.edu.ec"
     categoria: "Clima Espacial"
     categoria_slug: "cat-clima_espacial"
     imagen: "/imagenes/clima_espacial_ciclo25.svg"
     imagen_pie: "Máximo Solar 25 · Flujos XRS y Perturbación RTK/GNSS"
-    doi: "10.5281/zenodo.14208004"
+    doi: null
+    estado_doi: "En proceso de radicación (Zenodo CERN)"
     zenodo_url: "https://zenodo.org"
     resumen: "Análisis del impacto de las tormentas de radiación solar y eventos de centelleo ionosférico ecuatorial sobre las estaciones terrestres de referencia GNSS y telecomunicaciones de alta frecuencia (HF). Se articulan los flujos de rayos X solares (satélites GOES Primary) y el índice geomagnético Kp monitoreados en espacial.euroamericano.edu.ec con la pérdida de fijación de fase en receptores RTK de precisión agrícola."
     palabras_clave:

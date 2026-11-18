@@ -176,6 +176,7 @@ def compilar_portada(despachos, articulos):
     destacado = despachos[0] if despachos else None
     destacada_html = ""
     if destacado:
+        doi_destacado = f'<span class="fecha">DOI: <a href="https://doi.org/{destacado.get("doi")}" target="_blank">{destacado.get("doi")} ↗</a></span>' if destacado.get('doi') else '<span class="fecha" style="color: var(--marca-primario); font-weight: 600;">Depósito Zenodo en proceso</span>'
         destacada_html = f"""
     <article class="destacada {destacado.get('categoria_slug', 'cat-teledeteccion')}">
       <a class="destacada-imagen-enlace" href="/despachos/{destacado.get('slug')}.html">
@@ -193,7 +194,7 @@ def compilar_portada(despachos, articulos):
         <div class="noticia-meta">
           <span class="fuente">Investigador: {destacado.get('autor')}</span>
           <span class="fecha">Radicado: {formatear_fecha(destacado.get('fecha'))}</span>
-          <span class="fecha">DOI: {destacado.get('doi')}</span>
+          {doi_destacado}
         </div>
         <a class="destacada-cta" href="/despachos/{destacado.get('slug')}.html">Leer el despacho técnico completo →</a>
       </div>
@@ -203,6 +204,7 @@ def compilar_portada(despachos, articulos):
     # 2. Grid de Despachos del Observatorio (Resto de despachos)
     despachos_cards = []
     for d in despachos[1:]:
+        doi_card = f'<span class="fecha">DOI: <a href="https://doi.org/{d.get("doi")}" target="_blank">{d.get("doi")} ↗</a></span>' if d.get('doi') else '<span class="fecha" style="color: var(--marca-primario); font-weight: 600;">Depósito Zenodo en proceso</span>'
         card = f"""
       <article class="tarjeta {d.get('categoria_slug', 'cat-teledeteccion')}">
         <a class="tarjeta-imagen-enlace" href="/despachos/{d.get('slug')}.html">
@@ -221,7 +223,7 @@ def compilar_portada(despachos, articulos):
           <p class="tarjeta-resumen">{d.get('resumen')}</p>
           <div class="noticia-meta">
             <span class="fuente">Autor: {d.get('autor')}</span>
-            <span class="fecha">DOI: {d.get('doi')}</span>
+            {doi_card}
           </div>
         </div>
       </article>
@@ -337,6 +339,16 @@ def compilar_despachos_detalle(despachos):
         ruta_archivo = os.path.join(despachos_dir, f"{slug}.html")
         palabras_html = " • ".join([f'<span>#{kw}</span>' for kw in d.get("palabras_clave", [])])
 
+        doi_val = d.get('doi')
+        if doi_val:
+            doi_meta = f'<meta name="citation_doi" content="{doi_val}">'
+            doi_meta_line = f'<span class="fecha">DOI Permanente: <a href="https://doi.org/{doi_val}" target="_blank" rel="noopener">{doi_val} ↗</a></span>'
+            doi_apa = f"https://doi.org/{doi_val}"
+        else:
+            doi_meta = ''
+            doi_meta_line = '<span class="fecha" style="color: var(--marca-primario); font-weight: 600;">Estado: Preprint en revisión • Radicación en Zenodo CERN en proceso</span>'
+            doi_apa = '[Preprint institucional en revisión de autor • Radicación en Zenodo CERN en trámite]'
+
         html_item = f"""<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -347,7 +359,7 @@ def compilar_despachos_detalle(despachos):
   <meta name="citation_title" content="{d.get('titulo')}">
   <meta name="citation_author" content="{d.get('autor')}">
   <meta name="citation_publication_date" content="{d.get('fecha')}">
-  <meta name="citation_doi" content="{d.get('doi')}">
+  {doi_meta}
 
   <link rel="icon" href="/assets/favicon.png">
   <link rel="stylesheet" href="/style.css">
@@ -368,7 +380,7 @@ def compilar_despachos_detalle(despachos):
           <div class="noticia-meta">
             <span class="fuente">Investigador Responsable: <strong>{d.get('autor')}</strong></span>
             <span class="fecha">Radicado: {formatear_fecha(d.get('fecha'))}</span>
-            <span class="fecha">DOI Permanente: <a href="https://doi.org/{d.get('doi')}" target="_blank">{d.get('doi')}</a></span>
+            {doi_meta_line}
           </div>
         </header>
 
@@ -390,7 +402,7 @@ def compilar_despachos_detalle(despachos):
           <div style="background: var(--fondo); border: 1px solid var(--borde); border-radius: var(--radio); padding: 18px; margin: 24px 0;">
             <strong style="display: block; font-size: 13px; color: var(--texto); margin-bottom: 6px;">CÓMO CITAR ESTE DESPACHO (APA 7ma Edición):</strong>
             <code style="display: block; font-family: var(--fuente); font-size: 12px; color: var(--texto-tenue); line-height: 1.5;">
-              Derenzin Martínez, F. G. ({d.get('fecha')[:4]}). <em>{d.get('titulo')}</em> (Technical Dispatch Nro. {d.get('id')}). Observatorio de Ciencias de la Tierra y Clima Espacial, DERENZIN S.A.S. & Nodo UNESCO GlobalCoast. https://doi.org/{d.get('doi')}
+              Derenzin Martínez, F. G. ({d.get('fecha')[:4]}). <em>{d.get('titulo')}</em> (Technical Dispatch Nro. {d.get('id')}). Observatorio de Ciencias de la Tierra y Clima Espacial, DERENZIN S.A.S. & Nodo UNESCO GlobalCoast. {doi_apa}
             </code>
           </div>
 
@@ -501,15 +513,78 @@ def compilar_articulos_detalle(articulos):
             f.write(html_item)
     print(f"Compilados {len(articulos)} páginas de detalle de literatura.")
 
+def compilar_observatorios():
+    ruta_obs = os.path.join(SITE_DIR, "observatorios.html")
+    html_obs = f"""<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observatorios en Producción — Observatorio de Ciencias</title>
+  <link rel="icon" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  {render_cabecera("observatorios")}
+
+  <main class="contenido pagina-noticia con-sidebar-grid">
+    <div class="layout-grid-sidebar">
+      <div class="noticia-detalle" style="padding: 32px;">
+        <h1 class="noticia-detalle-titulo" style="font-size: 28px; margin-bottom: 24px;">Infraestructura de Observatorios en Tiempo Real</h1>
+
+        <div style="background: #ffffff; border: 1px solid var(--borde); border-radius: var(--radio); padding: 24px; margin-bottom: 28px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <h2 style="font-size: 18px; margin: 0; color: var(--texto);">1. Observatorio Meteorológico del Litoral</h2>
+            <span class="badge-peer-reviewed">● TELEMETRÍA EN VIVO</span>
+          </div>
+          <p style="font-size: 15px; line-height: 1.6; color: var(--texto-tenue); text-align: justify; margin-bottom: 14px;">
+            Plataforma de vigilancia sinóptica marina y atmosférica alojada en servidor Debian institucional. 
+            Procesa en tiempo real los destellos y eventos de energía del sensor GLM (Geostationary Lightning Mapper) de GOES-19 cada 20 segundos, 
+            la temperatura de brillo en la banda limpia infrarroja ABI Banda 13 (10.3 μm), y los mareógrafos de La Libertad y Esmeraldas bajo la red UNESCO/IOC.
+          </p>
+          <a href="https://geo.euroamericano.edu.ec" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: var(--enlace); text-decoration: none;">
+            Abrir geo.euroamericano.edu.ec (Suite Bilingüe ES/EN) →
+          </a>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid var(--borde); border-radius: var(--radio); padding: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <h2 style="font-size: 18px; margin: 0; color: var(--texto);">2. Observatorio de Clima Espacial Académico</h2>
+            <span style="font-size: 11px; font-weight: 700; color: #d97706; background: #fef3c7; padding: 3px 8px; border-radius: var(--radio-chico);">● CICLO SOLAR 25</span>
+          </div>
+          <p style="font-size: 15px; line-height: 1.6; color: var(--texto-tenue); text-align: justify; margin-bottom: 14px;">
+            Módulo de monitoreo heliofísico e ionosférico en tiempo real. 
+            Registra los flujos de rayos X de los satélites GOES Primary (GOES-16/18), las alertas operativas del Space Weather Prediction Center (NOAA SWPC) 
+            y el índice geomagnético planetario Kp para anticipar riesgos de degradación en receptores de precisión RTK/GNSS y enlaces de radio en alta frecuencia (HF) en la costa ecuatoriana.
+          </p>
+          <a href="https://espacial.euroamericano.edu.ec" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: var(--enlace); text-decoration: none;">
+            Abrir espacial.euroamericano.edu.ec →
+          </a>
+        </div>
+      </div>
+
+      {render_sidebar()}
+    </div>
+  </main>
+
+  {render_pie()}
+</body>
+</html>
+"""
+    with open(ruta_obs, "w", encoding="utf-8") as f:
+        f.write(html_obs)
+    print(f"Generado observatorios.html: {ruta_obs}")
+
 def compilar_archivo(despachos, articulos):
     ruta_archivo = os.path.join(SITE_DIR, "archivo.html")
 
     filas_despachos = []
     for d in despachos:
+        doi_meta_archivo = f"DOI: {d.get('doi')}" if d.get('doi') else "Depósito Zenodo en proceso"
         filas_despachos.append(f"""
         <li>
           <a href="/despachos/{d.get('slug')}.html">{d.get('titulo')}</a>
-          <span class="sidebar-recientes-fecha">{formatear_fecha(d.get('fecha'))} • DOI: {d.get('doi')}</span>
+          <span class="sidebar-recientes-fecha">{formatear_fecha(d.get('fecha'))} • {doi_meta_archivo}</span>
         </li>
         """)
 
@@ -569,6 +644,7 @@ def main():
     compilar_portada(despachos, articulos)
     compilar_despachos_detalle(despachos)
     compilar_articulos_detalle(articulos)
+    compilar_observatorios()
     compilar_archivo(despachos, articulos)
 
     # robots.txt y CNAME
