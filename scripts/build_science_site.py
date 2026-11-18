@@ -700,7 +700,24 @@ def main():
     with open(os.path.join(SITE_DIR, "CNAME"), "w", encoding="utf-8") as f:
         f.write("ciencias.derenzin.com\n")
 
-    print(f"Compilación exitosa: {len(despachos)} despachos propios y {len(articulos)} artículos externos validados.")
+    # Sincronización automática a la raíz para compatibilidad total con GitHub Pages (Branch: main / root)
+    import shutil
+    for item in ["index.html", "observatorios.html", "archivo.html", "robots.txt", "CNAME"]:
+        src = os.path.join(SITE_DIR, item)
+        dst = os.path.join(BASE_DIR, item)
+        if os.path.exists(src):
+            shutil.copy2(src, dst)
+    for folder in ["assets", "despachos", "articulos"]:
+        src_f = os.path.join(SITE_DIR, folder)
+        dst_f = os.path.join(BASE_DIR, folder)
+        if os.path.exists(src_f):
+            if os.path.exists(dst_f):
+                shutil.rmtree(dst_f)
+            shutil.copytree(src_f, dst_f)
+    with open(os.path.join(BASE_DIR, ".nojekyll"), "w", encoding="utf-8") as f:
+        f.write("")
+
+    print(f"Compilación exitosa: {len(despachos)} despachos propios y {len(articulos)} artículos externos validados. Sincronizado a raíz y site/.")
 
 if __name__ == "__main__":
     main()
