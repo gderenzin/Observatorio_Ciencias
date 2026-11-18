@@ -76,14 +76,14 @@ def aprobar_borrador(borrador_id):
 
     encontrado["revisor"] = "Prof. Ing. Feddor Gabriel Derenzin Martínez"
     encontrado["fecha_aprobacion"] = datetime.now().strftime("%Y-%m-%d")
-    encontrado["declaracion_transparencia"] = "Resumen técnico asistido por IA, revisado y validado por F. Derenzin."
+    encontrado["declaracion_transparencia"] = "Resumen técnico asistido por IA, revisado y validado por Prof. Feddor Derenzin M."
 
     aprobados.insert(0, encontrado)
 
     guardar_yaml(BORRADORES_FILE, "borradores", nuevos_borradores)
     guardar_yaml(APROBADOS_FILE, "articulos", aprobados)
 
-    print(f"\n[OK] Borrador {borrador_id} APROBADO formalmente por F. Derenzin.")
+    print(f"\n[OK] Borrador {borrador_id} APROBADO formalmente por Prof. Feddor Derenzin M.")
     print(f"Transferido a {APROBADOS_FILE}. Quedan {len(nuevos_borradores)} pendientes.")
 
     # Recompilar sitio

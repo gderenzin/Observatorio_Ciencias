@@ -90,7 +90,7 @@ def main():
     MAX_BORRADORES_EN_COLA = 5
 
     if len(borradores) >= MAX_BORRADORES_EN_COLA:
-        logging.info("La cola de borradores ya cuenta con %d elementos pendientes. No se ingresan más hasta revisión de F. Derenzin.", len(borradores))
+        logging.info("La cola de borradores ya cuenta con %d elementos pendientes. No se ingresan más hasta revisión del Prof. Feddor Derenzin M.", len(borradores))
         return
 
     for f in fuentes:
@@ -158,7 +158,7 @@ def main():
                 "resumen_preliminar_sin_exageracion": summary[:450] if summary else "Sin resumen provisto por el feed.",
                 "aprobado": False,
                 "revisor": "Pendiente de validación por Prof. Ing. Feddor Derenzin",
-                "declaracion_transparencia": "Resumen técnico asistido por IA, revisado y validado por F. Derenzin."
+                "declaracion_transparencia": "Resumen técnico asistido por IA, revisado y validado por Prof. Feddor Derenzin M."
             }
 
             borradores.append(borrador)

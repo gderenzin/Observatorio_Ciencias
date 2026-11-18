@@ -163,7 +163,7 @@ def render_sidebar():
               ✓ Datos abiertos de agencias oficiales.<br>
               ✓ Ingesta de sensores calibrados.<br>
               ✓ Delimitación geográfica explícita.<br>
-              ✓ Auditoría humana por F. Derenzin.
+              ✓ Auditoría humana por Prof. Feddor Derenzin M.
             </div>
           </section>
         </div>
@@ -515,7 +515,7 @@ def compilar_articulos_detalle(articulos):
           <p style="text-align: justify;">{art.get('resumen_fiel', '')}</p>
 
           <div style="margin-top: 32px; padding: 16px; background: var(--fondo); border: 1px solid var(--borde); border-radius: var(--radio); font-size: 13px; color: var(--texto-suave);">
-            <strong>Declaración de Transparencia:</strong> {art.get('declaracion_transparencia', 'Resumen técnico asistido por IA, revisado y validado por F. Derenzin.')}
+            <strong>Declaración de Transparencia:</strong> {art.get('declaracion_transparencia', 'Resumen técnico asistido por IA, revisado y validado por Prof. Feddor Derenzin M.')}
             <div style="margin-top: 10px;">
               <a href="{art.get('doi_url')}" target="_blank" rel="noopener" style="font-weight: 600; color: var(--enlace);">Leer artículo original completo en la revista (DOI) →</a>
             </div>
