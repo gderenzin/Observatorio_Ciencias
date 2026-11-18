@@ -3,164 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Archivo Histórico de Publicaciones | Observatorio de Ciencias</title>
-  <link rel="stylesheet" href="assets/css/science_editorial.css">
+  <title>Archivo Histórico — Observatorio de Ciencias</title>
+  <link rel="icon" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   
-    <div class="top-institutional-bar">
-      <div class="container">
-        <div class="affiliation">
-          <span>🏛️ Instituto Tecnológico Superior EuroAmericano</span>
-          <span>•</span>
-          <span>🌐 Nodo UNESCO GlobalCoast (PS-006-08)</span>
-          <span>•</span>
-          <span>🛡️ Protocolo Peters & Chin-Yee (2025)</span>
+  <header class="cabecera">
+    <div class="cabecera-contenido">
+      <a href="/index.html" class="marca-enlace">
+        <img src="/assets/logo-derenzin.png" alt="DERENZIN" class="marca-logo">
+        <div class="marca-texto">
+          <span class="marca-titulo">Observatorio de Ciencias</span>
+          <span class="marca-byline">Teledetección, Geociencias & Clima Espacial • <strong>DERENZIN S.A.S.</strong></span>
         </div>
-        <div class="live-links">
-          <a href="https://geo.euroamericano.edu.ec" target="_blank" rel="noopener">📡 Observatorio Litoral (GOES-19)</a>
-          <a href="https://espacial.euroamericano.edu.ec" target="_blank" rel="noopener">☀️ Clima Espacial Ecuatorial</a>
-        </div>
-      </div>
+      </a>
+      <nav class="nav">
+        <a href="/index.html" >Portada</a>
+        <a href="/archivo.html" class="activo">Archivo</a>
+        <a href="https://geo.euroamericano.edu.ec" target="_blank" rel="noopener noreferrer">Observatorio Litoral ↗</a>
+        <a href="https://espacial.euroamericano.edu.ec" target="_blank" rel="noopener noreferrer">Clima Espacial ↗</a>
+        <a href="https://noticias.derenzin.com" target="_blank" rel="noopener noreferrer">Ciberseguridad ↗</a>
+      </nav>
     </div>
+  </header>
+  <script src="/assets/cabecera-sticky.js" defer></script>
     
-  
-    <header class="main-header">
-      <div class="container">
-        <div class="header-brand">
-          <div class="pre-title">Portal de Ciencia Abierta & Difusión Satelital</div>
-          <h1>Observatorio de Ciencias de la Tierra, Teledetección y Clima Espacial</h1>
-          <p class="sub-desc">
-            Plataforma académica dedicada a la telemetría satelital (GOES-19 GLM/ABI, Sentinel-2, Landsat),
-            geofísica del litoral ecuatoriano, monitoreo agro-hidrológico y heliofísica.
-            Curaduría estricta con contención de conclusiones (cero sobregeneralizaciones asistidas por IA).
-          </p>
+
+  <main class="contenido pagina-noticia con-sidebar-grid">
+    <div class="layout-grid-sidebar">
+      <div class="noticia-detalle" style="padding: 32px;">
+        <h1 class="noticia-detalle-titulo" style="font-size: 28px; margin-bottom: 24px;">Archivo Histórico de Publicaciones</h1>
+
+        <h2 class="seccion-titulo" style="font-size: 20px;">Boletín Propio: Despachos del Observatorio</h2>
+        <ul class="sidebar-recientes" style="margin-bottom: 36px;">
+          
+        <li>
+          <a href="/despachos/01_estres_hidrico_montalvo.html">Diagnóstico Biofísico y Monitoreo de Estrés Hídrico en Maíz Duro (Zea mays L.) mediante Teledetección Multiespectral Sentinel-2 L2A en la Cuenca de Montalvo</a>
+          <span class="sidebar-recientes-fecha">15 de noviembre de 2026 • DOI: 10.5281/zenodo.14208001</span>
+        </li>
+        
+        <li>
+          <a href="/despachos/02_saturacion_ndvi_babahoyo.html">Fenomenología de la Saturación del Dosel Vegetal: Evaluación Comparativa de Índices NDVI y NDRE en Cultivos Arroceros de Cuenca Baja (San Román, Babahoyo)</a>
+          <span class="sidebar-recientes-fecha">13 de noviembre de 2026 • DOI: 10.5281/zenodo.14208002</span>
+        </li>
+        
+        <li>
+          <a href="/despachos/03_goes19_glm_conveccion.html">Arquitectura Computacional de Ingesta Continua y Telemetría de Tormentas Eléctricas en el Golfo de Guayaquil mediante el Sensor GLM de GOES-19</a>
+          <span class="sidebar-recientes-fecha">11 de noviembre de 2026 • DOI: 10.5281/zenodo.14208003</span>
+        </li>
+        
+        <li>
+          <a href="/despachos/04_clima_espacial_iono_rtk.html">Caracterización del Clima Espacial Ecuatorial y Riesgo de Degradación en Posicionamiento GNSS/RTK en la Costa Ecuatoriana durante el Máximo Solar 25</a>
+          <span class="sidebar-recientes-fecha">10 de noviembre de 2026 • DOI: 10.5281/zenodo.14208004</span>
+        </li>
+        
+        </ul>
+
+        <h2 class="seccion-titulo" style="font-size: 20px;">Literatura Externa Validada</h2>
+        <ul class="sidebar-recientes">
+          
+        <li>
+          <a href="/articulos/evaluacion-humedad-suelo-sentinel1-cuenca-mediterranea.html">Estimación de la Humedad Superficial del Suelo mediante Retrodispersión Radar Sentinel-1 C-SAR en Suelos Agrícolas Semiáridos</a>
+          <span class="sidebar-recientes-fecha">14 de octubre de 2025 • Copernicus EGU - Hydrology & Earth System Sciences</span>
+        </li>
+        
+        </ul>
+      </div>
+
+      
+      <aside class="sidebar-noticia">
+        <div class="sidebar-noticia-sticky">
+          <!-- Widget 1: Telemetría en Vivo -->
+          <section class="sidebar-bloque">
+            <h2 class="sidebar-titulo">Observatorios en Vivo</h2>
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
+              <div style="background: #ffffff; border: 1px solid var(--borde); border-radius: var(--radio); padding: 14px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <strong style="font-size: 13px; color: var(--texto);">Observatorio Litoral</strong>
+                  <span style="font-size: 10px; font-weight: 700; color: #15803d; background: #dcfce7; padding: 2px 6px; border-radius: 3px;">● EN VIVO</span>
+                </div>
+                <p style="font-size: 12px; color: var(--texto-tenue); margin: 0 0 8px 0; line-height: 1.45;">
+                  Sensor GOES-19 GLM de rayos cada 20s, canales ABI infrarrojos y mareógrafos UNESCO/IOC.
+                </p>
+                <a href="https://geo.euroamericano.edu.ec" target="_blank" style="font-size: 12px; font-weight: 600; color: var(--marca-acento-oscuro); text-decoration: none;">Acceder a geo.euroamericano.edu.ec →</a>
+              </div>
+
+              <div style="background: #ffffff; border: 1px solid var(--borde); border-radius: var(--radio); padding: 14px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <strong style="font-size: 13px; color: var(--texto);">Clima Espacial</strong>
+                  <span style="font-size: 10px; font-weight: 700; color: #d97706; background: #fef3c7; padding: 2px 6px; border-radius: 3px;">● CICLO 25</span>
+                </div>
+                <p style="font-size: 12px; color: var(--texto-tenue); margin: 0 0 8px 0; line-height: 1.45;">
+                  Flujos de rayos X solares GOES, índice Kp, perturbación RTK y centelleo en Ecuador.
+                </p>
+                <a href="https://espacial.euroamericano.edu.ec" target="_blank" style="font-size: 12px; font-weight: 600; color: var(--marca-acento-oscuro); text-decoration: none;">Acceder a espacial.euroamericano.edu.ec →</a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Widget 2: Integridad Epistémica -->
+          <section class="sidebar-bloque">
+            <h2 class="sidebar-titulo">Protocolo Peters & Chin-Yee (2025)</h2>
+            <p style="font-size: 12px; color: var(--texto-tenue); line-height: 1.5; margin: 8px 0;">
+              <em>Royal Society Open Science</em> (DOI: 10.1098/rsos.241776).
+              Los modelos de lenguaje tienden a multiplicar por 5 la probabilidad de exagerar conclusiones científicas.
+            </p>
+            <div style="background: #f8f9fa; border: 1px solid var(--borde); border-radius: var(--radio-chico); padding: 10px; font-size: 11px; line-height: 1.45; color: var(--texto);">
+              ✓ Cero publicación automática.<br>
+              ✓ Delimitación espacial y temporal.<br>
+              ✓ Preprints rotulados sin par.<br>
+              ✓ Revisión por F. Derenzin.
+            </div>
+          </section>
+
+          <!-- Widget 3: Afiliación Científica -->
+          <section class="sidebar-bloque">
+            <h2 class="sidebar-titulo">Adscripción y Doctorado</h2>
+            <p style="font-size: 12px; color: var(--texto-tenue); line-height: 1.5; margin: 8px 0;">
+              • <strong>Nodo UNESCO GlobalCoast:</strong> Código internacional PS-006-08.<br>
+              • <strong>Proyecto Doctoral NMBU:</strong> Dept. of Geomatics, Norwegian University of Life Sciences.<br>
+              • <strong>EuroAmericano:</strong> Dirección de Investigación y Redes.
+            </p>
+          </section>
         </div>
-        <nav class="editorial-nav">
-          <a href="index.html" >Inicio</a>
-          <a href="#despachos-nodo" >Boletín Propio (Despachos)</a>
-          <a href="#literatura-revisada" >Literatura Científica Validada</a>
-          <a href="observatorios.html" >Observatorios en Producción</a>
-          <a href="archivo.html" class="active">Archivo Histórico</a>
-        </nav>
-      </div>
-    </header>
+      </aside>
     
-
-  <main class="content-area">
-    <div class="container">
-      <div class="section-title-wrap">
-        <h2 class="section-title">Boletín Propio: Despachos Técnicos del Observatorio</h2>
-      </div>
-      <table class="formal-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Fecha</th>
-            <th>Título del Despacho</th>
-            <th>Área Temática</th>
-            <th>DOI Oficial</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-        <tr>
-          <td><code>DISP-2026-001</code></td>
-          <td>15 de noviembre de 2026</td>
-          <td><a href="despachos/01_estres_hidrico_montalvo.html" style="color: #0369a1; font-weight: 500;">Diagnóstico Biofísico y Monitoreo de Estrés Hídrico en Maíz Duro (Zea mays L.) mediante Teledetección Multiespectral Sentinel-2 L2A en la Cuenca de Montalvo</a></td>
-          <td>Teledetección Agrícola y Respuesta Espectral</td>
-          <td><code>10.5281/zenodo.14208001</code></td>
-        </tr>
-        
-        <tr>
-          <td><code>DISP-2026-002</code></td>
-          <td>13 de noviembre de 2026</td>
-          <td><a href="despachos/02_saturacion_ndvi_babahoyo.html" style="color: #0369a1; font-weight: 500;">Fenomenología de la Saturación del Dosel Vegetal: Evaluación Comparativa de Índices NDVI y NDRE en Cultivos Arroceros de Cuenca Baja (San Román, Babahoyo)</a></td>
-          <td>Teledetección Agrícola y Geoinformática</td>
-          <td><code>10.5281/zenodo.14208002</code></td>
-        </tr>
-        
-        <tr>
-          <td><code>DISP-2026-003</code></td>
-          <td>11 de noviembre de 2026</td>
-          <td><a href="despachos/03_goes19_glm_conveccion.html" style="color: #0369a1; font-weight: 500;">Arquitectura Computacional de Ingesta Continua y Telemetría de Tormentas Eléctricas en el Golfo de Guayaquil mediante el Sensor GLM de GOES-19</a></td>
-          <td>Meteorología Satelital y Sistemas en Tiempo Real</td>
-          <td><code>10.5281/zenodo.14208003</code></td>
-        </tr>
-        
-        <tr>
-          <td><code>DISP-2026-004</code></td>
-          <td>10 de noviembre de 2026</td>
-          <td><a href="despachos/04_clima_espacial_iono_rtk.html" style="color: #0369a1; font-weight: 500;">Caracterización del Clima Espacial Ecuatorial y Riesgo de Degradación en Posicionamiento GNSS/RTK en la Costa Ecuatoriana durante el Máximo Solar 25</a></td>
-          <td>Clima Espacial y Telecomunicaciones</td>
-          <td><code>10.5281/zenodo.14208004</code></td>
-        </tr>
-        
-        </tbody>
-      </table>
-
-      <div class="section-title-wrap" style="margin-top: 48px;">
-        <h2 class="section-title">Literatura Científica Externa Validada (Peters & Chin-Yee 2025)</h2>
-      </div>
-      <table class="formal-table">
-        <thead>
-          <tr>
-            <th>Fecha</th>
-            <th>Fuente</th>
-            <th>Título del Artículo / Preprint</th>
-            <th>DOI Original</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-        <tr>
-          <td>14 de octubre de 2025</td>
-          <td><span class="agency-source-pill">Copernicus EGU - Hydrology and Earth System Sciences</span></td>
-          <td><a href="articulos/evaluacion-humedad-suelo-sentinel1-cuenca-mediterranea.html" style="color: #0f172a; font-weight: 500;">Estimación de la Humedad Superficial del Suelo mediante Retrodispersión Radar Sentinel-1 C-SAR en Suelos Agrícolas Semiáridos</a></td>
-          <td><code>10.5194/hess-28-4125-2025</code></td>
-        </tr>
-        
-        </tbody>
-      </table>
     </div>
   </main>
 
   
-    <footer class="main-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-col">
-            <h4>Observatorio Científico</h4>
-            <p>
-              Iniciativa de ciencia abierta orientada a la investigación en teledetección multiespectral,
-              sistemas de alerta temprana de tormentas y radiación ionosférica para la cuenca baja del Guayas y el litoral.
-            </p>
-            <p><strong>Investigador Responsable:</strong><br>Prof. Ing. Feddor Gabriel Derenzin Martínez</p>
-          </div>
-          <div class="footer-col">
-            <h4>Infraestructura Operativa</h4>
-            <ul>
-              <li><a href="https://geo.euroamericano.edu.ec" target="_blank">geo.euroamericano.edu.ec (GOES-19 / Mareógrafos)</a></li>
-              <li><a href="https://espacial.euroamericano.edu.ec" target="_blank">espacial.euroamericano.edu.ec (Clima Espacial / SWPC)</a></li>
-              <li><a href="https://zenodo.org" target="_blank">Zenodo Open Science Repository</a></li>
-              <li><a href="https://github.com/gderenzin/Observatorio_Ciencias" target="_blank">Repositorio en GitHub</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Protocolo Editorial Peters & Chin-Yee (2025)</h4>
-            <p style="font-size: 12px; line-height: 1.5; color: #94a3b8;">
-              Cumplimiento del estándar de contención del alcance (Royal Society Open Science, DOI: 10.1098/rsos.241776).
-              Prohibición de resúmenes de IA automáticos sin revisión humana. Delimitación explícita de zonas geográficas,
-              períodos temporales y distinción rigurosa de correlación frente a causalidad.
-            </p>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <div>© 2026 Observatorio de Ciencias de la Tierra y el Espacio. Licencia Creative Commons Atribución 4.0 Internacional (CC BY 4.0).</div>
-          <div>Ciencia Abierta • Revisión Humana Innegociable • Cero Exageración de Conclusiones</div>
-        </div>
+  <footer class="pie">
+    <div class="pie-contenido">
+      <div class="pie-marca">
+        <a href="https://derenzin.com" target="_blank" rel="noopener noreferrer" class="pie-marca-enlace">
+          <img src="/assets/logo-derenzin.png" alt="DERENZIN" class="pie-logo">
+          <span class="pie-marca-nombre">DERENZIN S.A.S.</span>
+        </a>
+        <p class="pie-tagline">Centro de Teledetección y Heliofísica de DERENZIN S.A.S. — <a href="https://derenzin.com" target="_blank" rel="noopener noreferrer">derenzin.com ↗</a></p>
       </div>
-    </footer>
+      <div class="pie-legal">
+        <p><strong>Estándar Epistémico Peters & Chin-Yee (2025):</strong> Este portal no publica resúmenes automáticos. Toda literatura externa delimita estrictamente su zona geográfica, período temporal y tamaño muestral con revisión humana del Prof. Ing. Feddor Derenzin.</p>
+        <p class="pie-fuentes">Red Operativa: NOAA GOES-19 GLM / ABI, Constelación Copernicus Sentinel-1/2/3, NOAA SWPC, UNESCO/IOC Sea Level Network.</p>
+        <p class="pie-recurso">Nodo Regional: <a href="https://ciencias.derenzin.com">UNESCO GlobalCoast (PS-006-08)</a> • Articulación con Instituto EuroAmericano & NMBU Noruega.</p>
+        <p class="pie-copyright">© 2026 DERENZIN S.A.S. — Prof. Ing. Feddor Gabriel Derenzin Martínez. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
     
 </body>
 </html>

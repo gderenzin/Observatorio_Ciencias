@@ -578,6 +578,16 @@ def main():
     with open(os.path.join(SITE_DIR, "CNAME"), "w", encoding="utf-8") as f:
         f.write("ciencias.derenzin.com\n")
 
+    # Sincronización a la raíz del repositorio para compatibilidad tanto con /(root) como con /site en GitHub Pages
+    import shutil
+    for item in os.listdir(SITE_DIR):
+        src = os.path.join(SITE_DIR, item)
+        dst = os.path.join(BASE_DIR, item)
+        if os.path.isdir(src):
+            shutil.copytree(src, dst, dirs_exist_ok=True)
+        else:
+            shutil.copy2(src, dst)
+
     print(f"Compilación completada: {len(despachos)} despachos y {len(articulos)} artículos generados con diseño de alto impacto.")
 
 if __name__ == "__main__":
