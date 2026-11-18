@@ -1,0 +1,10 @@
+# ==============================================================================
+# COLA DE BORRADORES PENDIENTES DE REVISIÓN HUMANA (HUMAN-IN-THE-LOOP)
+# NINGÚN ELEMENTO DE ESTE ARCHIVO SE PUBLICA HASTA QUE F. DERENZIN LO VALIDE
+# ==============================================================================
+# Cuando el script fetch_science.py detecta un nuevo paper/preprint, lo agrega aquí.
+# Para aprobar un borrador y pasarlo al sitio público:
+# Ejecutar: python scripts/aprobar_borrador.py --id <ID_DEL_BORRADOR>
+# ==============================================================================
+
+borradores: []

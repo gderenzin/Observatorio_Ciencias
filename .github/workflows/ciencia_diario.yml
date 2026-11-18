@@ -1,8 +1,8 @@
-name: Observatorio Científico - Actualización Diaria
+name: Observatorio Científico - Ingesta de Borradores & Compilación
 
 on:
   schedule:
-    # 11:00 UTC = 06:00 America/Guayaquil (UTC-5, Ecuador sin horario de verano)
+    # 11:00 UTC = 06:00 America/Guayaquil (UTC-5, Ecuador)
     - cron: "0 11 * * *"
   workflow_dispatch: {}
 
@@ -30,22 +30,25 @@ jobs:
       - name: Instalar dependencias científicas
         run: pip install -r requirements.txt
 
-      - name: Ingesta de fuentes científicas oficiales (fetch_science.py)
+      - name: Ingesta de candidatos a borrador (Protocolo Peters & Chin-Yee 2025)
+        # Este script NUNCA publica directo: solo genera borradores pendientes
+        # en data/borradores_pendientes.yaml con límite estricto de cadencia.
         run: python scripts/fetch_science.py
 
-      - name: Compilación del portal estático (build_science_site.py)
+      - name: Compilación del portal estático
+        # Solo compila los despachos propios y artículos validados manualmente
         run: python scripts/build_science_site.py
 
-      - name: Commitear novedades científicas (si las hay)
+      - name: Commitear novedades y borradores pendientes
         id: commit_repo
         run: |
           set -e
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add site/ data/publicadas_ciencias.json data/ledger_dedup.json data/nuevas_ciencias_hoy.json
+          git add site/ data/borradores_pendientes.yaml data/articulos_aprobados.yaml data/ledger_dedup.json
           if git diff --cached --quiet; then
-            echo "Sin novedades hoy: no hay cambios que commitear."
+            echo "Sin cambios en el observatorio hoy."
           else
-            git commit -m "Compilación automática del observatorio científico - $(date -u +%Y-%m-%d)"
+            git commit -m "Actualización del observatorio (Borradores & Compilación) - $(date -u +%Y-%m-%d)"
             git push
           fi

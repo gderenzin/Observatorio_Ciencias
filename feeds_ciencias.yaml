@@ -1,57 +1,63 @@
 # ==============================================================================
 # OBSERVATORIO DE CIENCIAS DE LA TIERRA, TELEDETECCIÓN Y CLIMA ESPACIAL
-# LISTA BLANCA (ALLOWLIST) DE FUENTES CIENTÍFICAS PRIMARIAS Y REPOSITORIOS EO
+# LISTA BLANCA (ALLOWLIST) DE FUENTES CIENTÍFICAS CON DOI Y PREPRINTS (PETERS & CHIN-YEE 2025 COMPLIANT)
 # ==============================================================================
-# Regla de Oro: Solo se admiten fuentes institucionales directas de agencias espaciales,
-# organismos meteorológicos mundiales y consorcios científicos. Prohibido blogs informales.
-#
-# Campos requeridos:
-#   nombre: Nombre oficial de la entidad
-#   url: URL del feed RSS/Atom
-#   dominio: Dominio canónico de los artículos para verificación de origen
-#   idioma: "en" o "es"
-#   categoria: Criterio taxonómico de indexación
-#   descripcion: Alcance técnico de la fuente
+# Regla de Oro (Peters & Chin-Yee, Roy. Soc. Open Sci. 2025):
+# 1. Toda fuente externa debe tener DOI verificable o URL canónica de agencia.
+# 2. Los preprints se clasifican OBLIGATORIAMENTE como "No revisado por pares".
+# 3. Nada pasa a producción en automático: pasan a borradores_pendientes.yaml
+#    para revisión humana de F. Derenzin antes de publicarse.
+# ==============================================================================
 
 fuentes:
-  - nombre: "ESA - Observación de la Tierra"
+  # --- PREPRINTS CIENTÍFICOS (Obligatorio flag es_preprint: true) ---
+  - nombre: "EarthArXiv - Preprints en Ciencias de la Tierra"
+    url: "https://eartharxiv.org/repository/rss/"
+    dominio: "eartharxiv.org"
+    idioma: en
+    es_preprint: true
+    categoria: "preprints_ciencias_tierra"
+    descripcion: "Preprints abiertos en geomática, teledetección, hidrología y ciencias del suelo (no revisados por pares)."
+
+  - nombre: "arXiv - Geofísica y Física Atmosférica (physics.geo-ph)"
+    url: "https://rss.arxiv.org/rss/physics.geo-ph"
+    dominio: "arxiv.org"
+    idioma: en
+    es_preprint: true
+    categoria: "preprints_geofisica"
+    descripcion: "Preprints rigurosos de física planetaria, dinámica atmosférica y modelado numérico (no revisados por pares)."
+
+  - nombre: "arXiv - Heliofísica y Clima Espacial (astro-ph.SR)"
+    url: "https://rss.arxiv.org/rss/astro-ph.SR"
+    dominio: "arxiv.org"
+    idioma: en
+    es_preprint: true
+    categoria: "preprints_heliofisica"
+    descripcion: "Investigaciones pre-print en física solar, viento solar, eyecciones de masa coronal (CME) y clima espacial."
+
+  # --- REVISTAS Y PUBLICACIONES CIENTÍFICAS CON DOI ---
+  - nombre: "Copernicus Publications (EGU - Hydrology & Earth System Sciences)"
+    url: "https://hess.copernicus.org/xml/rss2_0.xml"
+    dominio: "copernicus.org"
+    idioma: en
+    es_preprint: false
+    categoria: "hidrologia_teledeteccion"
+    descripcion: "Artículos revisados por pares con DOI sobre hidrología satelital, dinámica de cuencas y balance hídrico."
+
+  - nombre: "Copernicus Publications (EGU - Annales Geophysicae)"
+    url: "https://angeo.copernicus.org/xml/rss2_0.xml"
+    dominio: "copernicus.org"
+    idioma: en
+    es_preprint: false
+    categoria: "geofisica_ionosfera"
+    descripcion: "Investigaciones revisadas por pares con DOI en física ionosférica ecuatorial y acoplamiento solar-terrestre."
+
+  # --- AGENCIA ESPACIAL OFICIAL (BOLETINES TÉCNICOS / MISSION DISPATCHES) ---
+  - nombre: "ESA - Earth Observation Technical Missions"
     url: "https://www.esa.int/rssfeed/Our_Activities/Observing_the_Earth"
     dominio: "esa.int"
     idioma: en
-    categoria: "teledeteccion_satelital"
-    descripcion: "Misiones Sentinel de Copernicus, Earth Explorers y teledetección biofísica de la Agencia Espacial Europea."
-
-  - nombre: "NASA - Earth Observatory"
-    url: "https://earthobservatory.nasa.gov/feeds/earth-observatory.rss"
-    dominio: "earthobservatory.nasa.gov"
-    idioma: en
-    categoria: "dinamica_terrestre"
-    descripcion: "Registros globales de cobertura vegetal, sequías, inundaciones, aerosoles y balance radiativo planetario."
-
-  - nombre: "NOAA - Space Weather Prediction Center"
-    url: "https://www.swpc.noaa.gov/products/space-weather-rss-feed"
-    dominio: "swpc.noaa.gov"
-    idioma: en
-    categoria: "clima_espacial"
-    descripcion: "Telemetría operativa de tormentas geomagnéticas, actividad solar del Ciclo 25 y radiación ionosférica."
-
-  - nombre: "USGS - Landsat Program"
-    url: "https://www.usgs.gov/news/rss/landsat"
-    dominio: "usgs.gov"
-    idioma: en
-    categoria: "teledeteccion_satelital"
-    descripcion: "Novedades técnicas de calibración, reflectancia de superficie y productos satelitales Landsat 8 y 9."
-
-  - nombre: "Organización Meteorológica Mundial (OMM / WMO)"
-    url: "https://wmo.int/news/feed"
-    dominio: "wmo.int"
-    idioma: en
-    categoria: "climatologia_oceano"
-    descripcion: "Vigilancia climática global, eventos hidrológicos extremos y evolución de los fenómenos ENSO (El Niño / La Niña)."
-
-  - nombre: "Programa Copernicus de la Unión Europea"
-    url: "https://www.copernicus.eu/en/news_and_events/news/rss.xml"
-    dominio: "copernicus.eu"
-    idioma: en
-    categoria: "teledeteccion_satelital"
-    descripcion: "Informes de servicio operativo en tierra, atmósfera, océanos y gestión de emergencias satelitales."
+    es_preprint: false
+    es_comunicado_tecnico: true
+    categoria: "misiones_satelitales_esa"
+    descripcion: "Reportes técnicos y operacionales de la constelación Sentinel y satélites Earth Explorers."
