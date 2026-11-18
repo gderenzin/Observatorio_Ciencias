@@ -694,8 +694,16 @@ def main():
     with open(os.path.join(SITE_DIR, "CNAME"), "w", encoding="utf-8") as f:
         f.write("ciencias.derenzin.com\n")
 
-    # Sincronización a la raíz del repositorio para compatibilidad tanto con /(root) como con /site en GitHub Pages
+    # Asegurar persistencia de mini-mapa interactivo
     import shutil
+    mapa_src = os.path.join(BASE_DIR, "mini-mapa.html")
+    mapa_dst = os.path.join(SITE_DIR, "mini-mapa.html")
+    if os.path.exists(mapa_src) and not os.path.exists(mapa_dst):
+        shutil.copy2(mapa_src, mapa_dst)
+    elif os.path.exists(mapa_dst) and not os.path.exists(mapa_src):
+        shutil.copy2(mapa_dst, mapa_src)
+
+    # Sincronización a la raíz del repositorio para compatibilidad tanto con /(root) como con /site en GitHub Pages
     for item in os.listdir(SITE_DIR):
         src = os.path.join(SITE_DIR, item)
         dst = os.path.join(BASE_DIR, item)
