@@ -99,9 +99,8 @@ def render_pie():
         <p class="pie-tagline">Centro de Teledetección y Heliofísica de DERENZIN S.A.S. — <a href="https://derenzin.com" target="_blank" rel="noopener noreferrer">derenzin.com ↗</a></p>
       </div>
       <div class="pie-legal">
-        <p><strong>Estándar Epistémico Peters & Chin-Yee (2025):</strong> Este portal no publica resúmenes automáticos. Toda literatura externa delimita estrictamente su zona geográfica, período temporal y tamaño muestral con revisión humana del Prof. Ing. Feddor Derenzin.</p>
-        <p class="pie-fuentes">Red Operativa: NOAA GOES-19 GLM / ABI, Constelación Copernicus Sentinel-1/2/3, NOAA SWPC, UNESCO/IOC Sea Level Network.</p>
-        <p class="pie-recurso">Nodo Regional: <a href="https://ciencias.derenzin.com">UNESCO GlobalCoast (PS-006-08)</a> • Articulación con Instituto EuroAmericano & NMBU Noruega.</p>
+        <p><strong>Portal Científico Independiente:</strong> Plataforma de análisis e investigación de DERENZIN S.A.S., basada en datos satelitales abiertos de libre acceso público (Open Data) provistos por agencias científicas internacionales (NOAA, NASA y Programa Copernicus de la Unión Europea).</p>
+        <p class="pie-fuentes">Fuentes de Telemetría Pública: NOAA GOES-19 ABI/GLM, NASA GSFC SDO/AIA, Constelación Copernicus Sentinel y NOAA SWPC.</p>
         <p class="pie-copyright">© {year} DERENZIN S.A.S. — Prof. Ing. Feddor Gabriel Derenzin Martínez. Todos los derechos reservados.</p>
       </div>
     </div>
@@ -122,7 +121,7 @@ def render_sidebar():
               <img src="/imagenes/mapa_litoral_miniatura.svg" alt="Mapa Litoral GOES-19 y Mareógrafos" style="width: 100%; height: auto; display: block; aspect-ratio: 5/3; object-fit: cover;">
             </a>
             <p style="font-size: 12px; color: var(--texto-tenue); margin: 0 0 10px 0; line-height: 1.45;">
-              Sensor <strong>GOES-19 GLM</strong> de rayos cada 20s, canales ABI infrarrojos y red mareográfica <strong>UNESCO/IOC</strong> en tiempo real.
+              Sensor <strong>GOES-19 GLM</strong> de rayos cada 20s, canales ABI infrarrojos y estaciones mareográficas públicas de libre acceso en tiempo real.
             </p>
             <a href="https://geo.euroamericano.edu.ec" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 8px 12px; background: #0f172a; color: #38bdf8; font-size: 11px; font-weight: 700; border-radius: var(--radio-chico); text-decoration: none; border: 1px solid #1e293b; box-sizing: border-box;">
               Acceder a geo.euroamericano.edu.ec ↗
@@ -154,18 +153,17 @@ def render_sidebar():
             </a>
           </section>
 
-          <!-- Widget 3: Integridad Epistémica -->
+          <!-- Widget 3: Metodología y Verificación -->
           <section class="sidebar-bloque">
-            <h2 class="sidebar-titulo">Protocolo Peters &amp; Chin-Yee (2025)</h2>
+            <h2 class="sidebar-titulo">Metodología y Verificación</h2>
             <p style="font-size: 12px; color: var(--texto-tenue); line-height: 1.5; margin: 8px 0;">
-              <em>Royal Society Open Science</em> (DOI: 10.1098/rsos.241776).
-              Los modelos de lenguaje multiplican por 5 la probabilidad de exagerar conclusiones científicas.
+              Plataforma fundamentada exclusivamente en telemetría satelital abierta y sensores físicos calibrados, sin generación sintética ni publicaciones automáticas no auditadas.
             </p>
             <div style="background: #f8f9fa; border: 1px solid var(--borde); border-radius: var(--radio-chico); padding: 10px; font-size: 11px; line-height: 1.45; color: var(--texto);">
-              ✓ Cero publicación automática.<br>
-              ✓ Delimitación espacial y temporal.<br>
-              ✓ Preprints rotulados sin par.<br>
-              ✓ Revisión humana por F. Derenzin.
+              ✓ Datos abiertos de agencias oficiales.<br>
+              ✓ Ingesta de sensores calibrados.<br>
+              ✓ Delimitación geográfica explícita.<br>
+              ✓ Auditoría humana por F. Derenzin.
             </div>
           </section>
         </div>
@@ -204,6 +202,26 @@ def compilar_portada(despachos, articulos):
       </div>
     </article>
         """
+    else:
+        destacada_html = """
+    <div style="background: var(--fondo-tarjeta); border: 1px solid var(--borde); border-radius: var(--radio); padding: 32px 28px; margin-bottom: 32px; text-align: left;">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+        <span style="font-size: 11px; font-weight: 800; color: #0284c7; background: #e0f2fe; padding: 3px 8px; border-radius: 3px; letter-spacing: 0.5px;">ESTADO EDITORIAL</span>
+        <span style="font-size: 12px; color: var(--texto-suave);">Auditoría y Revisión en Curso</span>
+      </div>
+      <h2 style="font-size: 20px; font-weight: 800; color: var(--texto); margin: 0 0 10px 0;">Bandeja de Despachos en Auditoría del Autor</h2>
+      <p style="font-size: 14px; color: var(--texto-tenue); line-height: 1.6; margin: 0 0 16px 0; text-align: justify;">
+        De acuerdo con nuestro principio de verdad empírica y contención metodológica, ningún análisis ni despacho técnico se publica de forma automática o prematura. Todos los borradores de teledetección y heliofísica se encuentran actualmente en proceso de revisión de datos, calibración de sensores y validación humana exhaustiva por parte del Prof. Ing. Feddor Derenzin antes de su publicación definitiva.
+      </p>
+      <div style="background: var(--fondo); border: 1px solid var(--borde); border-radius: var(--radio-chico); padding: 14px 18px; font-size: 13px; color: var(--texto); line-height: 1.5;">
+        <strong>Telemetría Operativa en Vivo:</strong> Mientras se completa la auditoría de los artículos de investigación, los datos de sensores satelitales y heliofísicos en tiempo real están disponibles permanentemente en los observatorios activos:
+        <div style="margin-top: 10px; display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="https://geo.euroamericano.edu.ec" target="_blank" rel="noopener" style="color: #0284c7; font-weight: 700; text-decoration: none;">🛰️ geo.euroamericano.edu.ec (GOES-19 GLM / Mareógrafos) ↗</a>
+          <a href="https://espacial.euroamericano.edu.ec" target="_blank" rel="noopener" style="color: #d97706; font-weight: 700; text-decoration: none;">☀️ espacial.euroamericano.edu.ec (Clima Espacial / SWPC) ↗</a>
+        </div>
+      </div>
+    </div>
+        """
 
     # 2. Grid de Despachos del Observatorio (Resto de despachos)
     despachos_cards = []
@@ -234,7 +252,7 @@ def compilar_portada(despachos, articulos):
         """
         despachos_cards.append(card)
 
-    despachos_grid_html = "\n".join(despachos_cards)
+    despachos_grid_html = "\n".join(despachos_cards) if despachos_cards else '<p style="font-size: 13px; color: var(--texto-suave); font-style: italic; margin-bottom: 24px;">No hay despachos adicionales en exhibición pública. Los borradores se encuentran en bandeja de auditoría editorial interna.</p>'
 
     # 3. Grid de Literatura Externa Validada
     articulos_cards = []
@@ -279,7 +297,7 @@ def compilar_portada(despachos, articulos):
         """
         articulos_cards.append(card)
 
-    articulos_grid_html = "\n".join(articulos_cards)
+    articulos_grid_html = "\n".join(articulos_cards) if articulos_cards else '<p style="font-size: 13px; color: var(--texto-suave); font-style: italic;">No hay literatura externa en exhibición pública. Toda literatura requiere aprobación previa con delimitación de alcance.</p>'
 
     html_completo = f"""<!DOCTYPE html>
 <html lang="es">
@@ -406,7 +424,7 @@ def compilar_despachos_detalle(despachos):
           <div style="background: var(--fondo); border: 1px solid var(--borde); border-radius: var(--radio); padding: 18px; margin: 24px 0;">
             <strong style="display: block; font-size: 13px; color: var(--texto); margin-bottom: 6px;">CÓMO CITAR ESTE DESPACHO (APA 7ma Edición):</strong>
             <code style="display: block; font-family: var(--fuente); font-size: 12px; color: var(--texto-tenue); line-height: 1.5;">
-              Derenzin Martínez, F. G. ({d.get('fecha')[:4]}). <em>{d.get('titulo')}</em> (Technical Dispatch Nro. {d.get('id')}). Observatorio de Ciencias de la Tierra y Clima Espacial, DERENZIN S.A.S. & Nodo UNESCO GlobalCoast. {doi_apa}
+              Derenzin Martínez, F. G. ({d.get('fecha')[:4]}). <em>{d.get('titulo')}</em> (Technical Dispatch Nro. {d.get('id')}). Observatorio de Ciencias de la Tierra y Clima Espacial, DERENZIN S.A.S. {doi_apa}
             </code>
           </div>
 
@@ -544,7 +562,7 @@ def compilar_observatorios():
           <p style="font-size: 15px; line-height: 1.6; color: var(--texto-tenue); text-align: justify; margin-bottom: 14px;">
             Plataforma de vigilancia sinóptica marina y atmosférica alojada en servidor Debian institucional. 
             Procesa en tiempo real los destellos y eventos de energía del sensor GLM (Geostationary Lightning Mapper) de GOES-19 cada 20 segundos, 
-            la temperatura de brillo en la banda limpia infrarroja ABI Banda 13 (10.3 μm), y los mareógrafos de La Libertad y Esmeraldas bajo la red UNESCO/IOC.
+            la temperatura de brillo en la banda limpia infrarroja ABI Banda 13 (10.3 μm), y las estaciones mareográficas costeras de La Libertad y Esmeraldas.
           </p>
           <a href="https://geo.euroamericano.edu.ec" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: var(--enlace); text-decoration: none;">
             Abrir geo.euroamericano.edu.ec (Suite Bilingüe ES/EN) →
@@ -591,6 +609,8 @@ def compilar_archivo(despachos, articulos):
           <span class="sidebar-recientes-fecha">{formatear_fecha(d.get('fecha'))} • {doi_meta_archivo}</span>
         </li>
         """)
+    if not filas_despachos:
+        filas_despachos = ['<li style="color: var(--texto-suave); font-style: italic; list-style: none;">No hay despachos publicados actualmente. Los borradores se encuentran en bandeja de auditoría interna.</li>']
 
     filas_articulos = []
     for art in articulos:
@@ -601,6 +621,8 @@ def compilar_archivo(despachos, articulos):
           <span class="sidebar-recientes-fecha">{formatear_fecha(art.get('fecha_publicacion'))} • {art.get('revista_fuente')}</span>
         </li>
         """)
+    if not filas_articulos:
+        filas_articulos = ['<li style="color: var(--texto-suave); font-style: italic; list-style: none;">No hay literatura externa publicada actualmente.</li>']
 
     html_completo = f"""<!DOCTYPE html>
 <html lang="es">
@@ -645,6 +667,20 @@ def compilar_archivo(despachos, articulos):
 def main():
     print("Iniciando compilación del portal de ciencias con plantilla Euronews...")
     despachos, articulos = cargar_datos()
+
+    # Limpiar archivos de detalle para evitar que queden artículos huérfanos o no auditados
+    for d_name in ["despachos", "articulos"]:
+        for parent in [SITE_DIR, BASE_DIR]:
+            target = os.path.join(parent, d_name)
+            if os.path.exists(target):
+                for item in os.listdir(target):
+                    item_path = os.path.join(target, item)
+                    if os.path.isfile(item_path):
+                        try:
+                            os.remove(item_path)
+                        except Exception:
+                            pass
+
     compilar_portada(despachos, articulos)
     compilar_despachos_detalle(despachos)
     compilar_articulos_detalle(articulos)

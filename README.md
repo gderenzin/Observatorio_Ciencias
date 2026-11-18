@@ -7,14 +7,11 @@ Plataforma académica y de ciencia abierta (*Open Science*) para el monitoreo sa
 
 ## 1. Misión Epistemológica & Afiliación Académica
 
-El observatorio opera como un nodo de investigación y divulgación tecnológica de acceso abierto, vinculado formalmente a:
-- **Instituto Tecnológico Superior EuroAmericano** (Carrera de Redes y Telecomunicaciones).
-- **Nodo Analítico UNESCO GlobalCoast (`PS-006-08`)** (Monitoreo costero y oceánico del Golfo de Guayaquil).
-- **Colaboración Académica Doctoral con la Norwegian University of Life Sciences (NMBU)**, Departamento de Geomática (Líneas de super-resolución espectral, deep learning en series temporales de Sentinel-2 y procesamiento Big Data en software de código abierto).
+El observatorio opera como una plataforma privada de análisis técnico y divulgación científica independiente de DERENZIN S.A.S., enfocada en el procesamiento de datos satelitales abiertos (Open Data) de agencias internacionales (NOAA, NASA y Programa Copernicus).
 
 **Investigador Responsable:**  
 **Prof. Ing. Feddor Gabriel Derenzin Martínez**  
-*Director de Carrera / Investigador Principal*  
+*Investigador Principal, DERENZIN S.A.S. / Director de Carrera, Instituto Tecnológico Superior EuroAmericano*  
 Correo: `fderenzin@euroamericano.edu.ec`
 
 ---
@@ -64,7 +61,7 @@ Este repositorio centraliza y documenta los datos de dos plataformas en producci
 1. **Observatorio Meteorológico del Litoral (`https://geo.euroamericano.edu.ec`):**
    - Telemetría de destellos y energía convectiva con el sensor **GOES-19 GLM** (Geostationary Lightning Mapper).
    - Temperatura de brillo con **GOES-19 ABI** Banda 13 (10.3 μm).
-   - Red mareográfica UNESCO/IOC Sea Level Station Monitoring Facility (La Libertad y Esmeraldas).
+   - Estaciones mareográficas públicas costeras (La Libertad y Esmeraldas).
    - Suite bilingüe completa (`ES / EN`).
 
 2. **Observatorio de Clima Espacial Académico (`https://espacial.euroamericano.edu.ec`):**
@@ -74,7 +71,9 @@ Este repositorio centraliza y documenta los datos de dos plataformas en producci
 
 ---
 
-## 5. Despachos Técnicos Radicados (Boletín Propio)
+## 5. Despachos Técnicos (En Proceso de Auditoría y Revisión del Autor)
+
+Los borradores y preprints técnicos se encuentran en la cola interna `data/borradores_pendientes.yaml`. Ningún estudio se publica de forma automática o no verificada; cada análisis requiere la previa validación empírica, calibración y aprobación manual del **Prof. Ing. Feddor Derenzin**.
 
 | Código | Título del Despacho | Metodología | Estado DOI |
 |---|---|---|---|

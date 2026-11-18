@@ -123,7 +123,7 @@
   <circle cx="56" cy="38" r="4" fill="#1e3a8a" stroke="#38bdf8" stroke-width="0.6"/>
   <circle cx="48" cy="48" r="2.5" fill="#10b981"/>
   <circle cx="48" cy="48" r="2.5" fill="none" stroke="#10b981" stroke-width="0.8" class="ring-anim"/>
-  <text x="17" y="58" font-family="'Inter', sans-serif" font-size="6.5" fill="#64748b">Sta. Cruz · IOC</text>
+  <text x="17" y="58" font-family="'Inter', sans-serif" font-size="6.5" fill="#64748b">Sta. Cruz · Galápagos</text>
 
   <!-- Encabezado y Badges de Telemetría -->
   <rect x="220" y="10" width="170" height="20" rx="3" fill="#030712" fill-opacity="0.85" stroke="#1e293b" stroke-width="0.6"/>
@@ -132,6 +132,6 @@
 
   <!-- Pie de Control Satelital -->
   <rect x="0" y="218" width="400" height="22" fill="#030712" fill-opacity="0.9"/>
-  <text x="12" y="233" font-family="'JetBrains Mono', monospace" font-size="8" fill="#94a3b8">GOES-19 ABI/GLM (20s) · RED MAREOGRÁFICA UNESCO/IOC</text>
+  <text x="12" y="233" font-family="'JetBrains Mono', monospace" font-size="8" fill="#94a3b8">GOES-19 ABI/GLM (20s) · RED MAREOGRÁFICA PÚBLICA</text>
   <text x="345" y="233" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#38bdf8">EN VIVO ↗</text>
 </svg>

@@ -2,9 +2,62 @@
 # COLA DE BORRADORES PENDIENTES DE REVISIÓN HUMANA (HUMAN-IN-THE-LOOP)
 # NINGÚN ELEMENTO DE ESTE ARCHIVO SE PUBLICA HASTA QUE F. DERENZIN LO VALIDE
 # ==============================================================================
-# Cuando el script fetch_science.py detecta un nuevo paper/preprint, lo agrega aquí.
-# Para aprobar un borrador y pasarlo al sitio público:
-# Ejecutar: python scripts/aprobar_borrador.py --id <ID_DEL_BORRADOR>
-# ==============================================================================
 
-borradores: []
+borradores:
+  - id: "DISP-2026-001"
+    slug: "01_estres_hidrico_montalvo"
+    tipo: "Despacho Propio (Preprint)"
+    titulo: "Diagnóstico Biofísico y Monitoreo de Estrés Hídrico en Maíz Duro (Zea mays L.) mediante Teledetección Multiespectral Sentinel-2 L2A en la Cuenca de Montalvo"
+    fecha: "2026-11-15"
+    autor: "Prof. Ing. Feddor Gabriel Derenzin Martínez"
+    filiacion: "Investigador Principal, DERENZIN S.A.S. / Director de Carrera, Instituto Tecnológico Superior EuroAmericano."
+    categoria: "Teledetección Agrícola"
+    estado: "Borrador de simulación preliminar - Pendiente de revisión y validación de campo por el autor"
+    observacion_autor: "Modelo biofísico hipotético. Requiere verificar si los datos corresponden a un caso simulado o a un lote convalidado in-situ antes de publicación."
+    resumen: "Evaluación espectral para una parcela de 22,42 ha en Montalvo (Los Ríos) a partir de imágenes Sentinel-2 L2A contrastando NDVI vs. NDMI."
+
+  - id: "DISP-2026-002"
+    slug: "02_saturacion_ndvi_babahoyo"
+    tipo: "Despacho Propio (Preprint)"
+    titulo: "Fenomenología de la Saturación del Dosel Vegetal: Evaluación Comparativa de Índices NDVI y NDRE en Cultivos Arroceros de Cuenca Baja (San Román, Babahoyo)"
+    fecha: "2026-11-13"
+    autor: "Prof. Ing. Feddor Gabriel Derenzin Martínez"
+    filiacion: "Investigador Principal, DERENZIN S.A.S. / Director de Carrera, Instituto Tecnológico Superior EuroAmericano."
+    categoria: "Teledetección Agrícola"
+    estado: "Borrador en revisión - Pendiente de validación empírica por el autor"
+    observacion_autor: "Estudio sobre banda B05 (RedEdge) en arrozal. Requiere revisión de datos por F. Derenzin."
+    resumen: "Investigación sobre cuadrícula de 805 píxeles Sentinel-2C L2A en San Román, Babahoyo."
+
+  - id: "DISP-2026-003"
+    slug: "03_goes19_glm_conveccion"
+    tipo: "Despacho Propio (Preprint de Ingeniería)"
+    titulo: "Arquitectura Computacional de Ingesta Continua y Telemetría de Tormentas Eléctricas en el Golfo de Guayaquil mediante el Sensor GLM de GOES-19"
+    fecha: "2026-11-11"
+    autor: "Prof. Ing. Feddor Gabriel Derenzin Martínez"
+    filiacion: "Investigador Principal, DERENZIN S.A.S. / Director de Carrera, Instituto Tecnológico Superior EuroAmericano."
+    categoria: "Meteorología Satelital"
+    estado: "Borrador técnico - Pendiente de aprobación final de arquitectura por el autor"
+    observacion_autor: "Documentación del pipeline real desplegado en geo.euroamericano.edu.ec."
+    resumen: "Pipeline NetCDF4 de ingesta de destellos GLM y temperatura de brillo ABI Banda 13."
+
+  - id: "DISP-2026-004"
+    slug: "04_clima_espacial_iono_rtk"
+    tipo: "Despacho Propio (Preprint de Heliofísica)"
+    titulo: "Caracterización del Clima Espacial Ecuatorial y Riesgo de Degradación en Posicionamiento GNSS/RTK en la Costa Ecuatoriana durante el Máximo Solar 25"
+    fecha: "2026-11-10"
+    autor: "Prof. Ing. Feddor Gabriel Derenzin Martínez"
+    filiacion: "Investigador Principal, DERENZIN S.A.S. / Director de Carrera, Instituto Tecnológico Superior EuroAmericano."
+    categoria: "Clima Espacial"
+    estado: "Borrador técnico - Pendiente de aprobación de correlaciones RTK por el autor"
+    observacion_autor: "Documentación de la heliofísica desplegada en espacial.euroamericano.edu.ec."
+    resumen: "Análisis del impacto de tormentas de radiación y centelleo sobre receptores RTK de precisión."
+
+  - id: "LIT-2026-001"
+    slug: "evaluacion-humedad-suelo-sentinel1-cuenca-mediterranea"
+    tipo: "Literatura Externa"
+    titulo: "Estimación de la Humedad Superficial del Suelo mediante Retrodispersión Radar Sentinel-1 C-SAR en Suelos Agrícolas Semiáridos"
+    autores: "Martínez-García, J., Dubois, C., & Al-Husseini, M."
+    revista_fuente: "Copernicus EGU - Hydrology & Earth System Sciences"
+    doi: "10.5194/hess-28-4125-2025"
+    estado: "Borrador de literatura - Pendiente de revisión y autorización de difusión por el autor"
+    resumen: "Inversión de retrodispersión radar banda C en suelos agrícolas semiáridos."
