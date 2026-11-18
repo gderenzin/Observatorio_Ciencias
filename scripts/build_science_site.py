@@ -697,6 +697,9 @@ def main():
     with open(os.path.join(SITE_DIR, "robots.txt"), "w", encoding="utf-8") as f:
         f.write("User-agent: *\nAllow: /\n")
 
+    with open(os.path.join(SITE_DIR, "CNAME"), "w", encoding="utf-8") as f:
+        f.write("ciencias.derenzin.com\n")
+
     print(f"Compilación exitosa: {len(despachos)} despachos propios y {len(articulos)} artículos externos validados.")
 
 if __name__ == "__main__":
