@@ -120,11 +120,17 @@
       doubleClickZoom: false
     });
 
-    // Capa base oscura satelital/cartográfica de alto contraste
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    // Capa base oscura cartográfica de alto contraste (Esri Dark Gray Canvas - 100% libre sin API key)
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
       maxZoom: 10,
       minZoom: 5,
-      subdomains: 'abcd'
+      attribution: 'Esri, DeLorme, NAVTEQ'
+    }).addTo(map);
+
+    // Etiquetas sutiles de referencia geográfica (ciudades y costas en gris transparente)
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 10,
+      minZoom: 5
     }).addTo(map);
 
     // Anillos concéntricos de radar de cobertura costera (Centro: Golfo de Guayaquil / Sta. Elena)
